@@ -31,7 +31,7 @@ puts 'Creating Application Enviroment'
   2.times do
     forum = Forum.create!(name: Faker::Book.title, group: forum_categories.sample, city: city)
 
-    chatroom = Chatroom.create!(name: "#{ city.name} #{ forum_categories.sample }", forum: forum )
+    chatroom = Chatroom.create!(name: "#{ city.name } #{ forum_categories.sample }", forum: forum )
     
     5.times do
       post = Post.create!(user: user, forum: forum, content: Faker::Quote.matz, title: Faker::Quote.singular_siegler)
@@ -45,5 +45,3 @@ puts 'Creating Application Enviroment'
 end
 puts '#'
 puts 'Done!'
-
-# gianboy = User.create!(first_name: "gian", last_name: "luca", username: "gluca", password: "123456", email: "gluca@aol.com")
