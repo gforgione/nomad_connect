@@ -3,7 +3,7 @@
 <ul>
   <% @forums.each do |forum| %>
     <li>
-      <%= link_to forum_posts_path(forum) do %>
+      <%= link_to city_forum_posts_path(forum.city, forum) do %>
         <%= "#{forum.name} ##{forum.group} | City: #{forum.city.name}"%> 
       <% end %>
     </li>
