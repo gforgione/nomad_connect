@@ -3,3 +3,6 @@
 <p><%= link_to "Headlines", city_headlines_path(@city) %></p>
 <p><%= link_to "Events", city_events_path(@city) %></p>
 <p><%= link_to "FAQ", city_faq_index_path(@city) %></p>
+
+
+<%= render partial: "shared/weather", locals: {weather_results: @weather_results, city_name: @city_name} %>

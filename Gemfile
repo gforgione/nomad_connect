@@ -29,8 +29,9 @@ gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
-gem 'news-api'
-
+gem 'open-uri'
+gem 'net-http'
+gem 'openssl'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'

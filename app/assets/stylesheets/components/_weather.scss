@@ -1,0 +1,18 @@
+.weather-info-container {
+    width: 400px;
+    height: 350px;
+    background-color: black;
+    color: white;
+}
+
+.weather-icon {
+    margin: 50px auto;
+    display: block;
+   align-items: center;
+    height: 100px;
+    width: 100px;
+}
+.fas {
+    font-size: 24px;
+    line-height: 1.2;
+}

@@ -114,12 +114,17 @@ GEM
     mini_mime (1.0.2)
     minitest (5.14.4)
     msgpack (1.4.2)
-    news-api (0.2.0)
+    net-http (0.1.1)
+      net-protocol
+      uri
+    net-protocol (0.1.0)
     nio4r (2.5.5)
     nokogiri (1.11.1-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.11.1-x86_64-linux)
       racc (~> 1.4)
+    open-uri (0.1.0)
+    openssl (2.2.0)
     orm_adapter (0.5.0)
     pg (1.2.3)
     pry (0.13.1)
@@ -210,6 +215,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
+    uri (0.10.1)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.1.0)
@@ -247,7 +253,9 @@ DEPENDENCIES
   font-awesome-sass
   jbuilder (~> 2.7)
   listen (~> 3.2)
-  news-api
+  net-http
+  open-uri
+  openssl
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-rails
