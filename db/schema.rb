@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2021_03_01_173652) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.text "content", null: false
+    t.string "content", null: false
     t.boolean "visible", default: true, null: false
     t.bigint "user_id", null: false
     t.bigint "chatroom_id", null: false
