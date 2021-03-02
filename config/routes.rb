@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end 
   end 
   resources :forums, only: %w[index] do 
-    resources :posts, only: %w[create]
+    resources :posts, only: %w[create index]
   end 
   resources :posts, only: %w[destroy] do 
     resources :comments, only: %w[create]
