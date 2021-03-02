@@ -8,15 +8,12 @@ Comment.destroy_all
 Chatroom.destroy_all
 Message.destroy_all
 
-# gianboy = User.create!(first_name: "gian", last_name: "luca", username: "gluca", password: "123456", email: "gluca@aol.com")
-
-
 puts 'Creating our beloved Jerry'
 jerry = User.create!(first_name: "jerry", last_name: "derry", email: "jderry@aol.com", username: "jderry", password: "123456")
 
 puts 'Creating Application Enviroment'  
 10.times do
-  print '#########'
+  print '###########'
   user = User.create!(
     first_name: Faker::Name.first_name, 
     last_name: Faker::Name.last_name, 
@@ -29,22 +26,24 @@ puts 'Creating Application Enviroment'
 
   location = Location.create!(user_id: user.id, city_id: city.id)
 
-  forum_categories = ["General", "Work" "Adventures"]
+  forum_categories = ["General", "Work", "Adventures"]
 
-  forum = Forum.create!(name: Faker::Book.title, group: forum_categories.sample, city: city)
+  2.times do
+    forum = Forum.create!(name: Faker::Book.title, group: forum_categories.sample, city: city)
 
-  chatroom = Chatroom.create!(name: "#{ city.name} #{ forum_categories.sample }", forum: forum )
-  
-  10.times do
-    post = Post.create!(user: user, forum: forum, content: Faker::Quote.matz, title: Faker::Quote.singular_siegler)
-
+    chatroom = Chatroom.create!(name: "#{ city.name} #{ forum_categories.sample }", forum: forum )
+    
     5.times do
-      comment = Comment.create!(content: Faker::Quote.matz, user: user, post: post)
-      message = Message.create!(user: user, content: Faker::Quote.matz, chatroom: chatroom)
+      post = Post.create!(user: user, forum: forum, content: Faker::Quote.matz, title: Faker::Quote.singular_siegler)
+
+      5.times do
+        comment = Comment.create!(content: Faker::Quote.matz, user: user, post: post)
+        message = Message.create!(user: user, content: Faker::Quote.matz, chatroom: chatroom)
+      end
     end
   end
 end
 puts '#'
 puts 'Done!'
 
-
+# gianboy = User.create!(first_name: "gian", last_name: "luca", username: "gluca", password: "123456", email: "gluca@aol.com")
