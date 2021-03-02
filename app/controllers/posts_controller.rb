@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   def index
     @comment = Comment.new
     @post = Post.new
-    @forum = Forum.find(params[:forum_id]) 
+    @forum = Forum.find(params[:forum_id])
+    @chatroom = Chatroom.find_by(forum_id: @forum)
   end
 
   def create
