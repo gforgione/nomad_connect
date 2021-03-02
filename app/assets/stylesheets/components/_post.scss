@@ -1,0 +1,45 @@
+.forums {
+  width: 1300px;
+  margin: 20px auto;
+}
+
+.post-card {
+  padding: 30px;
+  background-color: white;
+  margin-bottom: 50px;
+  border-radius: 15px;
+}
+
+.post-section {
+  margin-bottom: 4px;
+  border-bottom: solid 1px grey;
+  padding: 10px;
+  header {
+    font-size: 30px;
+  }
+  small {
+    font-size: 12px;
+    color: gray;
+  }
+}
+
+.post-content {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.comments-section {
+  font-size: 15px;
+  margin: 0 20px;
+}
+
+.comment-header {
+  font-weight: bolder;
+  margin-bottom: 2px;
+}
+.comment {
+  padding: 5px 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  background-color: #F0F2F5;
+}

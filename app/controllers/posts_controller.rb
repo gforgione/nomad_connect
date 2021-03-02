@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 
 
     if @post.save
-      redirect_to city_forum_posts_path(@forum.city, @forum, @post)
+      redirect_to city_forum_posts_path(@forum.city, @forum, @post, anchor: "post-#{@post.id}")
     else
       render "posts/index"
     end
