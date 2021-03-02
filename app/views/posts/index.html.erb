@@ -1,4 +1,7 @@
-<%= link_to "Back", city_forums_path(@forum.city), class: "btn btn-warning"%>
+<%= link_to "Back", city_forums_path(@forum.city), class: "btn btn-info"%>
+<%if @chatroom %>
+  <%= link_to "Chatroom: #{@chatroom.name}", city_chatroom_path(@forum.city, @chatroom), class: "btn btn-success" %>
+<% end %>
 <div class="container">
   <h1 class="text-center"> <%= "Forum: #{@forum.name} #{@forum.group}"%></h1>
   <%= link_to "+ Create new post", "#", class: "btn btn-primary"%>
