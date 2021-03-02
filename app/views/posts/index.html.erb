@@ -1,0 +1,38 @@
+<%= link_to "Back", city_forums_path(@forum.city), class: "btn btn-warning"%>
+<div class="container">
+  <h1 class="text-center"> <%= "Forum: #{@forum.name} #{@forum.group}"%></h1>
+  <%= link_to "+ Create new post", "#", class: "btn btn-primary"%>
+
+  <%= simple_form_for [@forum, @post] do |f| %>
+    <%= f.input :title, placeholder: "Title" %>
+    <%= f.input :content, label: false, placeholder: "Content" %>
+    <%= f.submit "Create Post" %>
+  <% end %>
+  <br><br><br>
+  <% if @forum.posts.any? %>
+    <% @forum.posts.order(created_at: :DESC).each do |post| %>
+      <article>
+        <br>
+        <h3><%= post.title %></h3>
+        <small> <%= "by #{post.user.username} at #{post.created_at}"%></small>
+        <p><%= post.content %></p>
+        
+        <ul>
+          <% post.comments.each do |comment| %>
+            <li> 
+              <p><b><%= "#{comment.user.username} at #{post.created_at}"%></b></p>
+              <p>   <%= "#{comment.content}"%></p>
+
+            </li>
+          <% end %>
+        </ul>
+        <%= simple_form_for [post, @comment], remote: true do |f| %>
+          <%= f.input :content, label: false, placeholder: "Commenting as #{current_user.username}"  %>
+          <%= f.submit "Send" %>
+        <% end %> 
+      </article>
+    <% end %>
+  <% else %>
+    <h1 class="text-center">No posts yet!</h1>
+  <% end %>
+</div>
