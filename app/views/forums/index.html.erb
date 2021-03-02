@@ -1,0 +1,11 @@
+<h1>Forums</h1>
+
+<ul>
+  <% @forums.each do |forum| %>
+    <li>
+      <%= link_to forum_posts_path(forum) do %>
+        <%= "#{forum.name} ##{forum.group} | City: #{forum.city.name}"%> 
+      <% end %>
+    </li>
+  <% end %>
+</ul>
