@@ -6,9 +6,10 @@ class CommentsController < ApplicationController
     
     @comment.post = @post
     @comment.user = current_user
-
+    
     if @comment.save
-      redirect_to city_forum_posts_path(@forum.city, @forum, @post)
+      
+      redirect_to city_forum_posts_path(@forum.city, @forum, anchor: "post-#{@post.id}")
     else
       render "posts/index"
     end
