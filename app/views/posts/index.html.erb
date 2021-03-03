@@ -2,11 +2,18 @@
 <div class="container">
   <h1 class="text-center"> <%= "Forum: #{@forum.name} #{@forum.group}"%></h1>
   <%= link_to "+ Create new post", "#", class: "btn btn-primary"%>
-
-  <%= simple_form_for [@forum, @post] do |f| %>
-    <%= f.input :title, placeholder: "Title" %>
-    <%= f.input :content, label: false, placeholder: "Content" %>
-    <%= f.submit "Create Post" %>
+  <% if user_signed_in?%>
+    <%= simple_form_for [@forum, @post], remote: true do |f| %>
+      <%= f.input :title, placeholder: "Title" %>
+      <%= f.input :content, label: false, placeholder: "Content" %>
+      <%= f.submit "Create Post" %>
+    <% end %>
+  <% else  %>
+    <%= simple_form_for [@forum, @post] do |f| %>
+      <%= f.input :title, placeholder: "Title" %>
+      <%= f.input :content, label: false, placeholder: "Content" %>
+      <%= f.submit "Create Post" %>
+    <% end %>
   <% end %>
   <br><br><br>
   <% if @forum.posts.any? %>
@@ -26,9 +33,16 @@
             </li>
           <% end %>
         </ul>
+        <% if user_signed_in? %>
         <%= simple_form_for [post, @comment], remote: true do |f| %>
           <%= f.input :content, label: false, placeholder: "Commenting as #{current_user.username}"  %>
           <%= f.submit "Send" %>
+        <% end  %>
+        <% else  %>
+          <%= simple_form_for [post, @comment] do |f| %>
+            <%= f.input :content, label: false, placeholder: "Leave a comment"  %>
+            <%= f.submit "Send" %>
+          <% end %>
         <% end %> 
       </article>
     <% end %>

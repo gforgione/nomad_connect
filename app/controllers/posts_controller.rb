@@ -1,12 +1,16 @@
 class PostsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   
   def index
     @comment = Comment.new
     @post = Post.new
     @forum = Forum.find(params[:forum_id]) 
+    @user = current_user
   end
 
   def create
+    
     @post = Post.new(post_params)
     @forum = Forum.find(params[:forum_id]) 
     @post.user = current_user
