@@ -15,14 +15,15 @@
 
   <section class="forum-posts">
     <h4 class="text-center"> <%= "#lis.general"%></h4>
-    <%# <h4 class="text-center"> <%= "Forum: #{@forum.name} #{@forum.group}"%>
-    <%= link_to "+ Create new post", "#", class: "btn btn-primary"%>
-  
-    <%= simple_form_for [@forum, @post],  html: { class: "new-post-form"}, remote: true do |f| %>
-      <%= f.input :title, placeholder: "Title" %>
-      <%= f.input :content, label: false, placeholder: "Content" %>
-      <%= f.submit "Create Post" %>
-    <% end %>
+      <%# <h4 class="text-center"> <%= "Forum: #{@forum.name} #{@forum.group}"%>
+    <%= link_to "+ Create new post", "#", id: "new-post-btn", class: "btn btn-primary text-right"%>
+    <div class="new-post-modal" id="new-post-modal">
+      <%= simple_form_for [@forum, @post],  html: { class: "new-post-form"}, remote: true do |f| %>
+        <%= f.input :title, placeholder: "Title" %>
+        <%= f.input :content, label: false, placeholder: "Content" %>
+        <%= f.submit "Create Post" %>
+      <% end %>
+    </div>
 
     <% if @forum.posts.any? %>
       <% @forum.posts.order(created_at: :DESC).each do |post| %>
@@ -57,7 +58,7 @@
   <section class="live-chat">
     <h4><%= Chatroom %></h4>
     <div class="messages" id="messages" data-chatroom-id="<%= @chatroom.id %>">
-      <% @chatroom.messages.last(5).each do |message| %>
+      <% @chatroom.messages.last(10).each do |message| %>
         <%= render 'messages/message', message: message %>
       <% end %>
     </div>

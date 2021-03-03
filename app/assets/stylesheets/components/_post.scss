@@ -1,5 +1,5 @@
 .forums {
-  width: 1700px;
+  width: 100%;
   margin: 20px 20px;
   display: flex; 
   justify-content: space-between; 
@@ -48,11 +48,12 @@
 }
 
 .new-post-form {
+  display: none; /* Hidden by default */
   padding: 30px 50px;
   background-color: white;
   margin-top: 20px;
   border-radius: 15px;
-  border: 2px solid #046CE7
+  border: 2px solid #046CE7;
 }
 
 
@@ -108,6 +109,7 @@
 .messages {
   overflow: auto;
   max-height: 550px;
+  padding-right: 25px;
 }
 
 .message-container {
@@ -116,12 +118,15 @@
   border-radius: 10px;
   background-color: #046CE7;
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  margin-right: 65px;
   i {
     font-weight: bold;
   }
 }
-.chatroom-msg-form {
-  
-}
 
+.chatroom-msg-form {
+  margin-top: 15px;
+  border-top: 1px solid black;
+  margin-right: 65px;
+}
