@@ -1,3 +1,6 @@
+
+<%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path(user_id: current_user.id) %>
+
 <ul>
   <% @cities.each do |city| %>
     <li><%= link_to city.name, city_path(city) %></li>

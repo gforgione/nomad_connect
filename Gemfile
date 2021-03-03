@@ -29,7 +29,9 @@ gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
-
+gem 'open-uri'
+gem 'net-http'
+gem 'openssl'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
@@ -38,6 +40,9 @@ group :development, :test do gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
   gem 'faker'
+gem 'omniauth-google-oauth2'
+gem 'google-api-client'
+gem "omniauth", "~> 1.9.1"
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

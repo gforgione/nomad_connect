@@ -1,0 +1,28 @@
+
+<div class="weather-info-container">
+  <div class="d-flex justify-content-between">
+    <div class= "d-flex mt-4 ml-4" >
+<i class="fas fa-map-marker-alt mr-2"></i>
+<h2> <%= @city_name %> <%=@weather_results[:condtion] %> </h2>
+    </div>
+<h3 class="mt-4 mr-4"> <%= @weather_results[:temp_c].to_i %> °</h3>
+</div>
+  <img src="https://<%=@weather_condition_icon%>" class="weather-icon">
+  <div class="bottom-info align-bottom ml-4">
+    <div class="d-flex justify-content-between">
+      <div> 
+      <p>Feels like: <br> <%= @weather_results[:feelslike_c] %>° </p>
+      </div>
+      <div>
+       <p>Humidity: <br> <%= @weather_results[:humidity] %>% </p>
+    </div>
+    <div class="mr-2">
+       <p>Wind: <br> <%= @weather_results[:wind_dir] %> at <%= @weather_results[:wind_kph]  %> kph </p>
+    </div>
+  </div>
+
+  
+</div>
+
+
+

@@ -5,8 +5,9 @@ class PostsController < ApplicationController
   def index
     @comment = Comment.new
     @post = Post.new
-    @forum = Forum.find(params[:forum_id]) 
-    @user = current_user
+    @forum = Forum.find(params[:forum_id])
+    @chatroom = Chatroom.find_by(forum_id: @forum)
+    @message = Message.new
   end
 
   def create
@@ -18,7 +19,7 @@ class PostsController < ApplicationController
 
 
     if @post.save
-      redirect_to city_forum_posts_path(@forum.city, @forum, @post)
+      redirect_to city_forum_posts_path(@forum.city, @forum, @post, anchor: "post-#{@post.id}")
     else
       render "posts/index"
     end
