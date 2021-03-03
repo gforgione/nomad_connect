@@ -5,6 +5,9 @@ class PostsController < ApplicationController
     @post = Post.new
     @forum = Forum.find(params[:forum_id])
     @chatroom = Chatroom.find_by(forum_id: @forum)
+
+    @message = Message.new
+
   end
 
   def create

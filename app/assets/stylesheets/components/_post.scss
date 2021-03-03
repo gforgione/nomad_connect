@@ -1,7 +1,8 @@
 .forums {
-  width: 1300px;
+  width: 1700px;
   margin: 20px 20px;
-  display: flex;  
+  display: flex; 
+  justify-content: space-between; 
   height: 700px;
 }
 
@@ -95,3 +96,32 @@
   border-radius: 10px;
   background-color: #F0F2F5;
 }
+
+
+
+// chatroom
+
+.live-chat {
+  width: 540px;
+}
+
+.messages {
+  overflow: auto;
+  max-height: 550px;
+}
+
+.message-container {
+  padding: 5px 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  background-color: #046CE7;
+  color: white;
+  margin-bottom: 10px;
+  i {
+    font-weight: bold;
+  }
+}
+.chatroom-msg-form {
+  
+}
+
