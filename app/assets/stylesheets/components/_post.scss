@@ -1,12 +1,66 @@
 .forums {
-  width: 1300px;
-  margin: 20px auto;
+  width: 1700px;
+  margin: 20px 20px;
+  display: flex; 
+  justify-content: space-between; 
+  height: 700px;
 }
+
+.forum-nav {
+  height: 500px;
+  width: 220px;
+  text-align: right;
+  background-color: white;
+  margin-right: 30px;
+  padding: 30px 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    display: block;
+    border-bottom: 2px solid grey;
+    padding: 4px;
+  }
+}
+
+  .forum-btn {
+    display: block;
+    border-radius: 2px;
+    margin-top: 15px;
+    font-size: 20px;
+  }
+
+  .chatroom-btn {
+    display: block;
+    font-size: 14px;
+    border-radius: 2px;
+    margin-bottom: 15px;
+  }
+
+// Posts section (right panel)
+.forum-posts{
+  width: 800px;
+  overflow: auto;
+  max-height: 2000px;
+  padding: 0 50px;
+}
+
+.new-post-form {
+  padding: 30px 50px;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 15px;
+  border: 2px solid #046CE7
+}
+
+
 
 .post-card {
   padding: 30px 50px;
   background-color: white;
-  margin-bottom: 50px;
+  margin-top: 50px;
   border-radius: 15px;
 }
 
@@ -42,3 +96,32 @@
   border-radius: 10px;
   background-color: #F0F2F5;
 }
+
+
+
+// chatroom
+
+.live-chat {
+  width: 540px;
+}
+
+.messages {
+  overflow: auto;
+  max-height: 550px;
+}
+
+.message-container {
+  padding: 5px 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  background-color: #046CE7;
+  color: white;
+  margin-bottom: 10px;
+  i {
+    font-weight: bold;
+  }
+}
+.chatroom-msg-form {
+  
+}
+
