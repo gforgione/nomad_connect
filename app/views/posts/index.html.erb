@@ -64,6 +64,7 @@
     </div>
     <%= simple_form_for [ @chatroom, @message ], html: { class: "chatroom-msg-form"}, remote: true do |f| %>
       <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
+
     <% end %>
   </section>
 </div>

@@ -2,6 +2,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 class CitiesController < ApplicationController
+  skip_before_action :authenticate_user! 
 
   def home
     @cities = City.all
