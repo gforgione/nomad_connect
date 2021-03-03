@@ -3,6 +3,6 @@ class Forum < ApplicationRecord
   has_many :posts
   has_one :chatroom
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :group, presence: true
 end
