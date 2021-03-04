@@ -163,7 +163,7 @@ GEM
     method_source (1.0.0)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2021.0212)
+    mime-types-data (3.2021.0225)
     mimemagic (0.3.5)
     mini_mime (1.0.2)
     minitest (5.14.4)
@@ -190,6 +190,11 @@ GEM
     omniauth (1.9.1)
       hashie (>= 3.4.6)
       rack (>= 1.6.2, < 3)
+    omniauth-facebook (8.0.0)
+      omniauth-oauth2 (~> 1.2)
+    omniauth-github (1.4.0)
+      omniauth (~> 1.5)
+      omniauth-oauth2 (>= 1.4.0, < 2.0)
     omniauth-google-oauth2 (0.8.1)
       jwt (>= 2.0)
       oauth2 (~> 1.1)
@@ -356,6 +361,8 @@ DEPENDENCIES
   listen (~> 3.2)
   net-http
   omniauth (~> 1.9.1)
+  omniauth-facebook
+  omniauth-github
   omniauth-google-oauth2
   open-uri
   openssl
@@ -380,4 +387,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.2.11
+   2.2.13
