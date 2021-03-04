@@ -1,6 +1,15 @@
 
-<ul>
-  <% @cities.each do |city| %>
-    <li><%= link_to city.name, city_path(city) %></li>
-  <% end %>
-</ul>
+<div class="container">
+
+  <section class="cities">
+    <% @cities.each do |city| %>
+      <%= link_to city_path(city) do %>
+        <div class="card-city" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1413&q=80)">
+          <%= city.name %>
+        </div>
+      <% end %>
+    <% end %>
+  </section>
+</div>
+
+</div>
