@@ -1,3 +1,21 @@
+.forum-header {
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid black;
+  background-color: white;
+}
+
+.side-pane-header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    display: block;
+    border-bottom: 2px solid grey;
+    padding: 4px;
+}
+
+
 .forums {
   width: 100%;
   margin: 20px 20px;
@@ -15,14 +33,6 @@
   padding: 30px 10px;
   border-radius: 5px;
   border: 1px solid black;
-  header {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    display: block;
-    border-bottom: 2px solid grey;
-    padding: 4px;
-  }
 }
 
   .forum-btn {
@@ -41,7 +51,7 @@
 
 // Posts section (right panel)
 .forum-posts{
-  width: 800px;
+  width: 1000px;
   overflow: auto;
   max-height: 2000px;
   padding: 0 50px;
@@ -103,23 +113,33 @@
 // chatroom
 
 .live-chat {
-  width: 540px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: white;
+  margin-right: 50px;
+  
+  padding: 30px 10px;
+  border-radius: 5px;
+  border: 1px solid black;
 }
 
 .messages {
   overflow: auto;
   max-height: 550px;
-  padding-right: 25px;
 }
 
 .message-container {
   padding: 5px 20px;
-  margin: 20px 0;
+  margin: 20px;
   border-radius: 10px;
   background-color: #046CE7;
   color: white;
-  margin-bottom: 12px;
-  margin-right: 65px;
+
+
   i {
     font-weight: bold;
   }
