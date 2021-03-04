@@ -1,0 +1,39 @@
+<div class="container border border-secondary rounded mt-5">
+  <div class="d-flex flex-column bd-highlight mb-3">
+    <div class="p-2 bd-highlight">
+      <h2 class="text-uppercase border-bottom my-5"><%= @user.username %> Profile</h2>
+    </div>
+  </div>  
+  <div class="d-flex flex-row justify-content-between bd-highlight mb-3">
+    <div class="p-2">
+      <p class="border-bottom p-2">First Name: <%= @user.first_name %></p>
+      <p class="border-bottom p-2">Last Name: <%= @user.last_name %></p>
+      <p class="border-bottom p-2">Email: <%= @user.email%></p>
+      <% if @user.bio == nil || @user.bio == "" %>
+        <p class="border-bottom p-2">Bio: <%= link_to "+ add a bio", edit_user_registration_path(current_user) %> </p>
+      <% else %>
+        <p class="border-bottom p-2">Bio: <%= @user.bio%></p>
+      <% end %>
+    </div> 
+    <div class="mx-5 p-2">
+      <% user_photo = get_photo_key(current_user)  %>
+      <%= cl_image_tag user_photo, class: "img-thumbnail", height: 300, width: 400, crop: :fill %>
+      
+    </div>
+    
+  </div>
+
+  <div class="d-flex flex-column bd-highlight mb-3">
+    <div class="p-2 bd-highlight">
+      <%= link_to "Edit your profile",  edit_user_registration_path(current_user), class: "btn btn-outline-secondary"%>
+    </div>
+  </div>
+
+  <div class="d-flex flex-column bd-highlight mb-3">
+    <div class="p-2 bd-highlight">
+      <p><%= link_to "Check out your Events", "#" %></p>
+    </div>
+  </div>
+</div>
+
+
