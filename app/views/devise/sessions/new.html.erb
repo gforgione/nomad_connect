@@ -1,8 +1,15 @@
 
 <div class="login-container">
 <div class="doc-content">
+<div class="header-cont">
 <h2><strong>Log in</strong></h2>
-<div class="d-flex"><p class="mr-2"> Not registered yet?</p> <p class="forgot-password" id="sign-up">Sign up</p> </div>
+<div class="d-flex">
+  <p class="mr-2" > Not registered yet?</p>
+  <button type="button" class="forgot-password sign-up-text" data-toggle="modal" data-target="#signupModal">
+    Signup now!
+  </button> 
+</div>
+</div>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -21,7 +28,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in", class: "login-btn" %>
+    <%= f.button :submit, "Login", class: "login-btn" %>
   </div>
 <% end %>
 </div>
@@ -44,4 +51,7 @@
 <i class="fab fa-github"></i><p>Login with GitHub</p>
 </div>
 <% end %>
+
 </div>
+
+<%= render 'shared/signup' %>

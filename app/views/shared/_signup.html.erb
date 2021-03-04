@@ -1,0 +1,37 @@
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header d-block text-center">
+      <img src="https://img.icons8.com/fluent/48/000000/google-logo.png"/>
+      <h2> <strong>Welcome to NomadConnect</strong></h2>
+        <h5 class="modal-title mb-3" id="exampleModalLabel">Find new friends</h5>
+        <%= link_to "Sign up with NomadConnect", new_user_registration_path, class: "sign-up-btn" %>
+      
+      </div>
+      <div class="modal-body">
+         <div class= "links-container doc-content">
+        <div class="or-word">
+        <strong>OR</strong>
+        </div>
+<%= link_to user_facebook_omniauth_authorize_path do  %>
+<div class="facebook-button d-flex link-btn">
+<i class="fab fa-facebook-f"></i><p>Signup with FaceBook</p>
+</div>
+<% end %>
+<%= link_to user_google_oauth2_omniauth_authorize_path do %>
+<div class= "google-button d-flex link-btn">
+<img src="https://img.icons8.com/fluent/48/000000/google-logo.png"/><p>Signup with Google</p>
+</div>
+<% end %>
+<%= link_to user_github_omniauth_authorize_path do %>
+<div class= "github-button d-flex link-btn">
+<i class="fab fa-github"></i><p>Signup with GitHub</p>
+</div>
+<% end %>
+      </div>
+      <div class="modal-footer">
+       
+      </div>
+    </div>
+  </div>
+</div>
