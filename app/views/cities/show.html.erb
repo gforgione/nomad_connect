@@ -1,8 +1,32 @@
-<h2><%= @city.name %></h2>
-<p><%= link_to "Forums", city_forums_path(@city) %></p>
-<p><%= link_to "Headlines", city_headlines_path(@city) %></p>
-<p><%= link_to "Events", city_events_path(@city) %></p>
-<p><%= link_to "FAQ", city_faq_index_path(@city) %></p>
+<h1 class="text-center p-4 m-4"><%= @city.name %></h2>
 
+<div class="city-info">
 
-<%= render partial: "shared/weather", locals: {weather_results: @weather_results, city_name: @city_name} %>
+</div>
+<div class="container">
+  <%= render partial: "shared/weather", locals: {weather_results: @weather_results, city_name: @city_name} %>
+  <section class="features">
+    <%= link_to city_forum_posts_path(@city, @city.forums.first) do %>
+      <div class="card-feature" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://shipway-consulting.co.uk/wp-content/uploads/2020/05/conversation-image-2.jpg)">
+        Discussion
+      </div>
+    <% end %>
+    
+    <%= link_to city_headlines_path(@city) do %>
+      <div class="card-feature" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://st.depositphotos.com/1004059/2708/v/600/depositphotos_27081269-stock-illustration-newspaper-icon-vector.jpg)">
+        Headlines
+      </div>
+    <% end %>
+    <%= link_to city_events_path(@city) do %>
+      <div class="card-feature" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img.freepik.com/free-vector/hand-with-pen-marks-date-calendar-deadline-important-events-vector-concept_53562-6503.jpg?size=626&ext=jpg)">
+        Events
+      </div>
+    <% end %>
+
+    <%= link_to city_faq_index_path(@city) do %>
+      <div class="card-feature" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://solutionsreview.com/network-monitoring/files/2019/09/oie_nFTE0cYcdXia.png)">
+        FAQ
+      </div>
+    <% end %>
+  </section>
+</div>

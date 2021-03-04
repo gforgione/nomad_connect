@@ -8,11 +8,31 @@ class AppSeeds
   @@city_index = 0
 
   def self.generate_environment
+    gen_jerry
     gen_model_1
     gen_model_2
   end
 
   private
+
+  def self.gen_jerry
+    user = SeedsHelper.jerry_user
+
+    5.times do
+      city = SeedsHelper.gen_city(@@cities, @@city_index)
+      @@city_index += 1
+  
+      location = Location.create!(user_id: user.id, city_id: city.id)
+  
+      @@users.each { |user| city.user_ids = city.user_ids << user.id }
+      city.save
+
+      @@forum_categories.each do |category|
+        forum = Forum.create!(name: "#{category} - #{ city.name }", group: category, city: city)
+        SeedsHelper.gen_chat_post_comment(category, city, forum, user)
+      end
+    end
+  end
 
   def self.gen_model_1
     # Cities with many users

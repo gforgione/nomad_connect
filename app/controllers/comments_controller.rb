@@ -1,8 +1,5 @@
 class CommentsController < ApplicationController
-
-
   def create
-    
     @comment = Comment.new(comment_params)
     @post = Post.find(params[:post_id])
     @forum = @post.forum
@@ -11,7 +8,10 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-
+      PostChannel.broadcast_to(
+        @post,
+        render_to_string(partial: "comment", locals: { comment: @comment })
+      )
       redirect_to city_forum_posts_path(@forum.city, @forum, anchor: "post-#{@post.id}")
     else
       render "posts/index"

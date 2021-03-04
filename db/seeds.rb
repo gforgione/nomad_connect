@@ -4,7 +4,13 @@ puts "Cleaning database..."
 
 puts 'Creating Application Environment'
 
+puts "It seems that....\nCould it be true??!!"
+
+
 AppSeeds.generate_environment
 
 puts '#'
-puts 'Done!'
+
+puts "Jerry is back!!!!!"
+
+puts 'Environment complete!!!'
