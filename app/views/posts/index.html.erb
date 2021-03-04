@@ -1,32 +1,28 @@
-<%= link_to "Back", city_forums_path(@forum.city), class: "btn btn-info"%>
+<h1 class="forum-header"> <%= "#{@current_forum.name}" %></h4>
 <div class="forums">
   <section class="forum-nav">
-    <header>Forums</header>
-    <%= link_to "#lis.general", "#", class: "forum-btn" %>
-    <%= link_to "gen-chat", city_chatroom_path(@forum.city, @chatroom), class: "chatroom-btn" %>
-    <%= link_to "#lis.social", "#", class: "forum-btn" %>
-    <%= link_to "prof-chat", city_chatroom_path(@forum.city, @chatroom), class: "chatroom-btn" %>
-    <%= link_to "#lis.prof", "#", class: "forum-btn" %>
-    <%= link_to "prof-chat", city_chatroom_path(@forum.city, @chatroom), class: "chatroom-btn" %>
-    <%if @chatroom %>
-      <%# link_to "Chatroom: #{@chatroom.name}", city_chatroom_path(@forum.city, @chatroom), class: "chatroom-btn"  %>
+    <header class="side-pane-header">Forums</header>
+    <% @forums.each do |forum| %>
+      <%if forum == @current_forum %>
+        <%= link_to "#{forum.group}", city_forum_posts_path(@city, forum), class: "forum-btn font-weight-bold" %>
+      <% else %>
+        <%= link_to "#{forum.group}", city_forum_posts_path(@city, forum), class: "forum-btn" %>
+      <% end %>
     <% end %>
   </section>
 
   <section class="forum-posts">
-    <h4 class="text-center"> <%= "#lis.general"%></h4>
-      <%# <h4 class="text-center"> <%= "Forum: #{@forum.name} #{@forum.group}"%>
-    <%= link_to "+ Create new post", "#", id: "new-post-btn", class: "btn btn-primary text-right"%>
+    <button class="btn btn-primary btn-small d-flex justify-center" id="new-post-btn">Create Post</button>
     <div class="new-post-modal" id="new-post-modal">
-      <%= simple_form_for [@forum, @post],  html: { class: "new-post-form"}, remote: true do |f| %>
+      <%= simple_form_for [@current_forum, @post],  html: { class: "new-post-form"}, remote: true do |f| %>
         <%= f.input :title, placeholder: "Title" %>
         <%= f.input :content, label: false, placeholder: "Content" %>
         <%= f.submit "Create Post" %>
       <% end %>
     </div>
 
-    <% if @forum.posts.any? %>
-      <% @forum.posts.order(created_at: :DESC).each do |post| %>
+    <% if @current_forum.posts.any? %>
+      <% @current_forum.posts.order(created_at: :DESC).each do |post| %>
         <%# Creating post with title, author, and content %>
         <article class="post-card">
           <section class="post-section" id="post-<%= post.id%>">
@@ -35,35 +31,32 @@
             <p class="post-content"><%= post.content %></p>      
           </section>
 
-          <section class ="comments-section">
+          <section class ="comments-section" data-post-id="<%=post.id%>">
               <%# Check to see if comments anre create comments below %>
               <% if post.comments.any? %>
                 <% post.comments.order(created_at: :ASC).each do |comment| %>
-                  <div class="comment" id="comment-<%= comment.id %>">
-                    <p class="comment-header"><%= "#{comment.user.username} on #{comment.created_at.strftime("%B %-d, %Y %-l:%M%p")}"%></b></p>
-                    <p><%= "#{comment.content}"%></p>
-                  </div>
+                  <%= render 'comments/comment', comment: comment %>
                 <% end %>
-              <% end %>
-            <%= simple_form_for [post, @comment], remote: true do |f| %>
-              <%= f.input :content, label: false, placeholder: "Commenting as #{current_user.username}", class: "test"  %>
-              <%= f.submit "Send" %>
-            <% end %> 
+              <% end %> 
           </section>
+          <%= simple_form_for [post, @comment], remote: true do |f| %>
+              <%= f.input :content, label: false %>
+              <%= f.submit "Send" %>
+          <% end %>
         </article>
       <% end %>
     <% end %>
   </section>
 
   <section class="live-chat">
-    <h4><%= Chatroom %></h4>
+    <header class="side-pane-header">Chatroom</header>
     <div class="messages" id="messages" data-chatroom-id="<%= @chatroom.id %>">
       <% @chatroom.messages.last(10).each do |message| %>
         <%= render 'messages/message', message: message %>
       <% end %>
     </div>
     <%= simple_form_for [ @chatroom, @message ], html: { class: "chatroom-msg-form"}, remote: true do |f| %>
-      <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
+      <%= f.input :content, label: false, placeholder: "Message #{@chatroom.name}" %>
 
     <% end %>
   </section>

@@ -1,17 +1,17 @@
 const newPostModal = () => {
   const createBtn = document.querySelector("#new-post-btn");
-  const modal = document.querySelector(".new-post-form");
+  const createForm = document.querySelector(".new-post-form");
 
-  createBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    
-    if (modal.style.display === "none") {
-      modal.style.display = "block";
-    } else {
-      modal.style.display = "none";
-    }
-  });
+  if (createBtn) {
+    createBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      if (createForm.style.display === "none" || createForm.style.display === "") {
+        createForm.style.display = "block";
+      } else {
+        createForm.style.display = "none";
+      }
+    });
+  };
 };
-
 
 export { newPostModal };
