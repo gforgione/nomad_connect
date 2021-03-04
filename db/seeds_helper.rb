@@ -23,7 +23,11 @@ class SeedsHelper
     'Singapore', 
     'Sydney', 
     'Vancouver', 
-    'Venice'
+    'Venice',
+    'Porto',
+    'Beijing',
+    'Bergen',
+    'Copenhagen'
   ]
 
   def self.gen_chat_post_comment (category, city, forum, user)
@@ -46,11 +50,24 @@ class SeedsHelper
     return (
       User.create!(
       first_name: name, 
-      last_name: last_name, 
+      last_name: last_name,
+      bio: Faker::Quote.jack_handey,
       email: "#{name}_#{last_name}@gmail.com", 
       password: "123456",
       username: "#{ name }_#{(1..99).to_a.sample}"
       )
+    )
+  end
+
+  def self.jerry_user
+    return (
+      User.create!(
+        first_name: "Jerry", 
+        last_name: "Derry",
+        bio: Faker::Quote.jack_handey,
+        email: "jderry@aol.com", 
+        username: "jerry_the_legend", 
+        password: "123456")
     )
   end
 
