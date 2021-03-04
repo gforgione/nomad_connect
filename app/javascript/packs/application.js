@@ -27,11 +27,13 @@ import "bootstrap";
 
 
 import { initChatroomCable } from "../channels/chatroom_channel";
+import { initPostCable } from "../channels/post_channel";
 import { newPostModal } from "../channels/new_post";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initChatroomCable();
+  initPostCable();
   newPostModal();
 });

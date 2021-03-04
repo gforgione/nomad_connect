@@ -35,21 +35,18 @@
             <p class="post-content"><%= post.content %></p>      
           </section>
 
-          <section class ="comments-section">
+          <section class ="comments-section" data-post-id="<%=post.id%>">
               <%# Check to see if comments anre create comments below %>
               <% if post.comments.any? %>
                 <% post.comments.order(created_at: :ASC).each do |comment| %>
-                  <div class="comment" id="comment-<%= comment.id %>">
-                    <p class="comment-header"><%= "#{comment.user.username} on #{comment.created_at.strftime("%B %-d, %Y %-l:%M%p")}"%></b></p>
-                    <p><%= "#{comment.content}"%></p>
-                  </div>
+                  <%= render 'comments/comment', comment: comment %>
                 <% end %>
-              <% end %>
-            <%= simple_form_for [post, @comment], remote: true do |f| %>
+              <% end %> 
+          </section>
+          <%= simple_form_for [post, @comment], remote: true do |f| %>
               <%= f.input :content, label: false, placeholder: "Commenting as #{current_user.username}", class: "test"  %>
               <%= f.submit "Send" %>
-            <% end %> 
-          </section>
+            <% end %>
         </article>
       <% end %>
     <% end %>
