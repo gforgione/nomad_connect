@@ -1,9 +1,9 @@
-a {
-  text-decoration: none;
-  color: black;
-  &:hover {
-    text-decoration: none;
-    color: rgba(150,150,150,.8)
+.headline {
+  a {
+    color: black;
+    &:hover {
+      color: rgba(150,150,150,.8)
+    }
   }
 }
 .news-info-p {
