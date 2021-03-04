@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :events, only: %w[index show]
     resources :headlines, only: %w[index]
     resources :chatrooms, only: :show
-    resources :forums, only: %w[index] do 
+    resources :forums, only: %w[] do 
       resources :posts, only: %w[index]
     end 
   end 
