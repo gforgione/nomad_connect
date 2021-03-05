@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   root to: 'cities#home'
- 
+
+  resources :cities, only: %w[new create]
   resources :cities, only: %w[show] do 
     resources :faq, only: %w[index]
     resources :events, only: %w[index show]
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
     resources :forums, only: %w[] do 
       resources :posts, only: %w[index]
     end 
-  end 
+  end
   resources :forums, only: [] do 
     resources :posts, only: %w[create]
   end 
