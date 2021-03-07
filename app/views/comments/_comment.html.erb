@@ -1,4 +1,4 @@
 <div class="comment" id="comment-<%= comment.id %>">
-  <p class="comment-header"><%= "#{comment.user.username} on #{comment.created_at.strftime("%B %-d, %Y %-l:%M%p")}"%></b></p>
+  <p class="author"><%= "#{comment.user.username} on #{comment.created_at.strftime("%B %-d, %Y %-l:%M%p")}"%></p>
   <p><%= "#{comment.content}"%></p>
 </div>

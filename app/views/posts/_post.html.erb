@@ -1,0 +1,21 @@
+<article class="post-item">
+  <section class="post-content" id="post-<%= post.id%>">
+    <header><%= post.title %></header>
+    <small> <%= "by #{post.user.username} on #{post.created_at.strftime("%B %-d, %Y %-l:%M%p")}"%></small>
+    <p><%= post.content %></p>      
+  </section>
+
+  <section class="post-comments" data-post-id="<%=post.id%>">
+      <%# Check to see if comments and create comments below %>
+      <% if post.comments.any? %>
+        <% post.comments.order(created_at: :ASC).each do |comment| %>
+          <%= render 'comments/comment', comment: comment %>
+        <% end %>
+      <% end %> 
+  </section>
+
+  <%= simple_form_for [post, @comment], html: { class: "comment comment-form"}, remote: true do |f| %>
+      <%= f.input :content, label: false %>
+      <%= f.submit "Comment" %>
+  <% end %>
+</article>
