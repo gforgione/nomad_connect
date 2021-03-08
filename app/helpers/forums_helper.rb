@@ -19,7 +19,7 @@ module ForumsHelper
     end
     
     link_to city_forum_posts_path(forum.city, forum), class: classes do 
-      content_tag(:i, '', class: font_awesome_class) + " " + forum.group
+      content_tag(:i, '', class: font_awesome_class + " fa-fw") + " " + forum.group
     end
   end
 end

@@ -9,7 +9,7 @@
 
 //left pane
 .aside {
-  width: 10%;
+  width: 14%;
   height: 70%;
   text-align: left;
   background-color: white;
@@ -26,10 +26,18 @@
     border-bottom: 2px solid grey;
   }
 
-  a {
-    display: block;
+  .forum-name {
     padding: 10px 2px;
     font-size: 18px;
+    display: block;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  i {
+    display: inline-block;
   }
 }
 
