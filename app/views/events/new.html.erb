@@ -1,0 +1,33 @@
+<%= form_with(model: @event, local: true) do |form| %>
+
+
+<div class="field">
+  <%= form.label :summary %>
+  <%= form.text_field :summary %>
+</div>
+
+
+<div class="field">
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+</div>
+
+<div class="field">
+  <%= form.label :start_date %>
+  <%= form.datetime_select :start_date %>
+</div>
+
+<div class="field">
+  <%= form.label :end_date %>
+  <%= form.datetime_select :end_date %>
+</div>
+
+<div class="field">
+  <%= form.label :location %>
+  <%= form.text_field :location %>
+</div>
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+<% end %>

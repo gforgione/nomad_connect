@@ -290,7 +290,7 @@ Devise.setup do |config|
     
     select_account: true,
 
-    scope: 'userinfo.email'
+    scope: 'userinfo.email, userinfo.profile, calendar, calendar.events'
     
 }
 end
