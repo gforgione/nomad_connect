@@ -1,7 +1,11 @@
 <article class="post-item">
   <section class="post-content" id="post-<%= post.id%>">
     <header><%= post.title %></header>
-    <small> by <%=link_to post.user.username, user_path(post.user_id)%> on <%= "#{post.created_at.strftime("%B %-d, %Y %-l:%M%p")}" %></small>
+    <small>
+    <% user_photo = get_photo_key(post.user)%> 
+    <%= cl_image_tag user_photo, class: "rounded-circle mr-2", height: 30, width: 30 %> by
+    <%=link_to post.user.username, user_path(post.user_id)%> on <%= "#{post.created_at.strftime("%B %-d, %Y %-l:%M%p")}" %>
+    </small>
     <p><%= post.content %></p>      
   </section>
 
