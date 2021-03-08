@@ -1,7 +1,8 @@
+$background-color: #e0e8f0e3;
+
 .forum-header {
   text-align: center;
   font-family: "Open Sans", sans-serif;
-  
 }
 
 .city-banner {
@@ -13,8 +14,8 @@
   height: 85vh;
   display: flex;
   justify-content: space-between;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 20px;
+  background-color: $background-color;
 }
 
 //left pane
@@ -72,7 +73,7 @@
   display: none; /* Hidden by default */
   padding: 15px 30px;
   background-color: white;
-  margin-top: 20px;
+  margin: 25px 15px;
   border-radius: 15px;
   border: 2px solid #046CE7;
 }
@@ -83,7 +84,7 @@
   padding: 20px;
   padding-bottom: 5px;
   background-color: white;
-  margin: 25px 0;
+  margin: 25px 15px;
   border-radius: 15px;
 
   .post-content {

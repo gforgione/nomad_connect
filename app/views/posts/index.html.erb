@@ -3,7 +3,7 @@
 <div class="discussions-container">
   <section class="aside">
     <%= link_to city_path(@city) do %>
-      <%= cl_image_tag get_photo_key_city(@city), class: "city-banner", width: 200, crop: :crop%>
+      <%= cl_image_tag get_photo_key_city(@city), class: "city-banner", width: 200, crop: :fill%>
     <% end %>
     
     <header>Groups</header>
@@ -27,7 +27,7 @@
   </section>
 
   <section class="chatroom">
-    <header>Chatroom</header>
+    <header><%= "#{current_forum.group} Chatroom" %></header>
     <div class="messages-container" id="messages" data-chatroom-id="<%= @chatroom.id %>">
       <% @chatroom.messages.last(10).each do |message| %>
         <%= render 'messages/message', message: message %>
