@@ -1,4 +1,4 @@
 <div class="comment" id="comment-<%= comment.id %>">
-  <p class="author"><%= "#{comment.user.username} on #{comment.created_at.strftime("%B %-d, %Y %-l:%M%p")}"%></p>
+  <span class="author"><%= link_to comment.user.username, user_path(comment.user_id), class:"user-comment"%> <%= "on #{comment.created_at.strftime("%B %-d, %Y %-l:%M%p")}"%></span>
   <p><%= "#{comment.content}"%></p>
 </div>
