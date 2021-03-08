@@ -2,6 +2,7 @@
   width: 100vw;
   height: 85vh;
   display: flex;
+  justify-content: space-between;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -28,19 +29,24 @@
   a {
     display: block;
     padding: 10px 2px;
+    font-size: 18px;
   }
 }
 
 // middle pane
 .posts-container {
-  width: 65%;
+  width: 50%;
   overflow: auto;
   max-height: 2000px;
   padding: 0 20px;
-
+  
+  margin: 0 100px;
+  
   button i {
     font-size: 14px;
   }
+
+  
 }
 
 .create-post-form {

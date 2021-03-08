@@ -3,11 +3,7 @@
   <section class="aside">
     <header>Groups</header>
     <% @forums.each do |forum| %>
-      <%if forum == @current_forum %>
-        <%= link_to "#{forum.group}", city_forum_posts_path(@city, forum), class: "forum-name font-weight-bold" %>
-      <% else %>
-        <%= link_to "#{forum.group}", city_forum_posts_path(@city, forum) %>
-      <% end %>
+      <%= forum_link(forum) %>
     <% end %>
   </section>
   <section class="posts-container">
