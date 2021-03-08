@@ -1,14 +1,26 @@
+$background-color: #e0e8f0e3;
+
+.forum-header {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.city-banner {
+  display: block;
+  margin: 0 auto;
+}
 .discussions-container {
   width: 100vw;
   height: 85vh;
   display: flex;
-  padding-left: 20px;
-  padding-right: 20px;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: $background-color;
 }
 
 //left pane
 .aside {
-  width: 10%;
+  width: 14%;
   height: 70%;
   text-align: left;
   background-color: white;
@@ -17,6 +29,9 @@
   padding: 20px;
   font-size: 20px;
 
+  img {
+    margin-bottom: 10px;
+  }
   header {
     text-align: center;
     border-bottom: 2px solid grey;
@@ -25,19 +40,30 @@
     border-bottom: 2px solid grey;
   }
 
-  a {
-    display: block;
+  .forum-name {
     padding: 10px 2px;
+    font-size: 18px;
+    display: block;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  i {
+    display: inline-block;
   }
 }
 
 // middle pane
 .posts-container {
-  width: 65%;
+  width: 50%;
   overflow: auto;
   max-height: 2000px;
   padding: 0 20px;
-
+  
+  margin: 0 100px;
+  
   button i {
     font-size: 14px;
   }
@@ -47,7 +73,7 @@
   display: none; /* Hidden by default */
   padding: 15px 30px;
   background-color: white;
-  margin-top: 20px;
+  margin: 25px 15px;
   border-radius: 15px;
   border: 2px solid #046CE7;
 }
@@ -58,7 +84,7 @@
   padding: 20px;
   padding-bottom: 5px;
   background-color: white;
-  margin: 25px 0;
+  margin: 25px 15px;
   border-radius: 15px;
 
   .post-content {
@@ -66,7 +92,7 @@
     border-bottom: solid 1px grey;
 
     header {
-      font-size: 28px;
+      font-size: 24px;
     }
     small {
       font-size: 12px;

@@ -1,13 +1,14 @@
-<h1 class="forum-header text-center"> <%= "#{@current_forum.name}" %></h4>
+
+<h1 class="forum-header"> <%= "#{@current_forum.name}" %></h4>
 <div class="discussions-container">
   <section class="aside">
+    <%= link_to city_path(@city) do %>
+      <%= cl_image_tag get_photo_key_city(@city), class: "city-banner", width: 200, crop: :fill%>
+    <% end %>
+    
     <header>Groups</header>
     <% @forums.each do |forum| %>
-      <%if forum == @current_forum %>
-        <%= link_to "#{forum.group}", city_forum_posts_path(@city, forum), class: "forum-name font-weight-bold" %>
-      <% else %>
-        <%= link_to "#{forum.group}", city_forum_posts_path(@city, forum) %>
-      <% end %>
+      <%= forum_link(forum) %>
     <% end %>
   </section>
   <section class="posts-container">
@@ -26,7 +27,7 @@
   </section>
 
   <section class="chatroom">
-    <header>Chatroom</header>
+    <header><%= "#{current_forum.group} Chatroom" %></header>
     <div class="messages-container" id="messages" data-chatroom-id="<%= @chatroom.id %>">
       <% @chatroom.messages.last(10).each do |message| %>
         <%= render 'messages/message', message: message %>
