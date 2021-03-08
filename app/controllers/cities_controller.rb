@@ -46,6 +46,16 @@ class CitiesController < ApplicationController
     end
   end
 
+  def edit
+    @city = City.find(params[:id])
+  end
+
+  def update
+    @city = City.find(params[:id])
+    @city.update(city_params)
+    redirect_to city_path(@city)
+  end
+
   private
 
   def city_params
