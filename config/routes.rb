@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'cities#home'
 
-  resources :cities, only: %w[new create]
+  resources :cities, only: %w[new create edit update]
   resources :cities, only: %w[show] do 
     resources :faq, only: %w[index]
     resources :events, only: %w[index show]

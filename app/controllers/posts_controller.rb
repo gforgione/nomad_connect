@@ -21,9 +21,9 @@ class PostsController < ApplicationController
   end
 
   helper_method :current_forum # sometimes you can add this to application controller if you want to access it from whole app
-  
+
   def create
-    
+  
     @post = Post.new(post_params)
     @forum = Forum.find(params[:forum_id]) 
     @post.user = current_user
