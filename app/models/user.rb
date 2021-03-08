@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
   has_many :messages
+  has_many :events
 
   has_one_attached :photo
 
@@ -19,16 +20,26 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
 
   def self.from_omniauth(access_token, omniauth_params)
+    
+  if omniauth_params.empty? 
+    user =  where(email: access_token.info.email).first_or_create
+        user.email = access_token.info.email
+        user.refresh_token = access_token.credentials.refresh_token
+        user.expires_at = Time.at(access_token.credentials.expires_at)
+        user.access_token = access_token.credentials.token
+        user.last_name = access_token.extra.id_info.family_name
+        user.first_name = access_token.extra.id_info.given_name
+        image = URI.open(access_token.extra.id_info.picture)
+        user.photo.attach(io: image, filename: "image.jpg")
+        user.password = Devise.friendly_token[0,20]
+        user.username = access_token.info.email.split("@")[0]
+        user.save!
+    else
     data = access_token.info
     user = User.find(omniauth_params["user_id"])
-  
-    # Uncomment the section below if you want users to be created if they don't exist
-    # unless user
-    #     user = User.create(name: data['name'],
-    #        email: data['email'],
-    #        password: Devise.friendly_token[0,20]
-    #     )
-    # end
+
+       
+    end 
     user
 end
 

@@ -45,6 +45,7 @@ gem 'google-api-client'
 gem "omniauth", "~> 1.9.1"
 gem 'omniauth-facebook'
 gem 'omniauth-github'
+gem 'googleauth'
 
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

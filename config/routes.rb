@@ -23,4 +23,5 @@ Rails.application.routes.draw do
     resources :messages, only: %w[create]
   end 
   resources :locations, only: %w[index]
+  resources :events, only: %w[index new create]
 end

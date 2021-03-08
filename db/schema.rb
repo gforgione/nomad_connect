@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_211824) do
-
+ActiveRecord::Schema.define(version: 2021_03_05_144430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +58,20 @@ ActiveRecord::Schema.define(version: 2021_03_03_211824) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "summary"
+    t.string "location"
+    t.string "description"
+    t.bigint "user_id", null: false
+    t.bigint "city_id", null: false
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_events_on_city_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "forums", force: :cascade do |t|
@@ -120,7 +133,7 @@ ActiveRecord::Schema.define(version: 2021_03_03_211824) do
     t.string "refresh_token"
     t.string "provider"
     t.string "uid"
-
+    t.boolean "registered_with_google"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -129,6 +142,8 @@ ActiveRecord::Schema.define(version: 2021_03_03_211824) do
   add_foreign_key "chatrooms", "forums"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "events", "cities"
+  add_foreign_key "events", "users"
   add_foreign_key "forums", "cities"
   add_foreign_key "locations", "cities"
   add_foreign_key "locations", "users"
