@@ -1,9 +1,13 @@
 .forum-header {
   text-align: center;
-  background-color: blue;
-  height: 300px;
+  font-family: "Open Sans", sans-serif;
+  
 }
 
+.city-banner {
+  display: block;
+  margin: 0 auto;
+}
 .discussions-container {
   width: 100vw;
   height: 85vh;
@@ -24,6 +28,9 @@
   padding: 20px;
   font-size: 20px;
 
+  img {
+    margin-bottom: 10px;
+  }
   header {
     text-align: center;
     border-bottom: 2px solid grey;
@@ -59,8 +66,6 @@
   button i {
     font-size: 14px;
   }
-
-  
 }
 
 .create-post-form {
@@ -86,7 +91,7 @@
     border-bottom: solid 1px grey;
 
     header {
-      font-size: 28px;
+      font-size: 24px;
     }
     small {
       font-size: 12px;
