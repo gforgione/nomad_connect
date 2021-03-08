@@ -1,7 +1,7 @@
 import consumer from "./consumer";
 
 const initPostCable = () => {
-  const commentsContainer = document.querySelectorAll('.comments-section');
+  const commentsContainer = document.querySelectorAll('.post-comments');
   commentsContainer.forEach((elm) => {
     const id = elm.dataset.postId;
 

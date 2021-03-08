@@ -36,17 +36,19 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'cloudinary', '~> 1.16.0'
-group :development, :test do gem 'pry-byebug'
-  gem 'pry-rails'
-  gem 'dotenv-rails'
-  gem 'faker'
+
 gem 'omniauth-google-oauth2'
 gem 'google-api-client'
 gem "omniauth", "~> 1.9.1"
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'googleauth'
+gem 'faker'
 
+
+group :development, :test do gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'dotenv-rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

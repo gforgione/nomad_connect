@@ -1,63 +1,40 @@
+
 <h1 class="forum-header"> <%= "#{@current_forum.name}" %></h4>
-<div class="forums">
-  <section class="forum-nav">
-    <header class="side-pane-header">Forums</header>
+<div class="discussions-container">
+  <section class="aside">
+    <%= link_to city_path(@city) do %>
+      <%= cl_image_tag get_photo_key_city(@city), class: "city-banner", width: 200, crop: :fill%>
+    <% end %>
+    
+    <header>Groups</header>
     <% @forums.each do |forum| %>
-      <%if forum == @current_forum %>
-        <%= link_to "#{forum.group}", city_forum_posts_path(@city, forum), class: "forum-btn font-weight-bold" %>
-      <% else %>
-        <%= link_to "#{forum.group}", city_forum_posts_path(@city, forum), class: "forum-btn" %>
-      <% end %>
+      <%= forum_link(forum) %>
     <% end %>
   </section>
-
-  <section class="forum-posts">
-    <button class="btn btn-primary btn-small d-flex justify-center" id="new-post-btn">Create Post</button>
-    <div class="new-post-modal" id="new-post-modal">
-      <%= simple_form_for [@current_forum, @post],  html: { class: "new-post-form"}, remote: true do |f| %>
-        <%= f.input :title, placeholder: "Title" %>
-        <%= f.input :content, label: false, placeholder: "Content" %>
-        <%= f.submit "Create Post" %>
-      <% end %>
-    </div>
+  <section class="posts-container">
+    <button class="btn btn-primary btn-small" id="new-post-btn"><i class="fas fa-plus"></i> Create Post</button>
+    <%= simple_form_for [@current_forum, @post],  html: { class: "create-post-form"}, remote: true do |f| %>
+      <%= f.input :title, placeholder: "Title" %>
+      <%= f.input :content, label: false, placeholder: "Content" %>
+      <%= f.submit "Create Post" %>
+    <% end %>
 
     <% if @current_forum.posts.any? %>
       <% @current_forum.posts.order(created_at: :DESC).each do |post| %>
-        <%# Creating post with title, author, and content %>
-        <article class="post-card">
-          <section class="post-section" id="post-<%= post.id%>">
-            <header><%= post.title %></header>
-            <small> <%= "by #{post.user.username} on #{post.created_at.strftime("%B %-d, %Y %-l:%M%p")}"%></small>
-            <p class="post-content"><%= post.content %></p>      
-          </section>
-
-          <section class ="comments-section" data-post-id="<%=post.id%>">
-              <%# Check to see if comments anre create comments below %>
-              <% if post.comments.any? %>
-                <% post.comments.order(created_at: :ASC).each do |comment| %>
-                  <%= render 'comments/comment', comment: comment %>
-                <% end %>
-              <% end %> 
-          </section>
-          <%= simple_form_for [post, @comment], remote: true do |f| %>
-              <%= f.input :content, label: false %>
-              <%= f.submit "Send" %>
-          <% end %>
-        </article>
+        <%= render 'post', post: post %>
       <% end %>
     <% end %>
   </section>
 
-  <section class="live-chat">
-    <header class="side-pane-header">Chatroom</header>
-    <div class="messages" id="messages" data-chatroom-id="<%= @chatroom.id %>">
+  <section class="chatroom">
+    <header><%= "#{current_forum.group} Chatroom" %></header>
+    <div class="messages-container" id="messages" data-chatroom-id="<%= @chatroom.id %>">
       <% @chatroom.messages.last(10).each do |message| %>
         <%= render 'messages/message', message: message %>
       <% end %>
     </div>
     <%= simple_form_for [ @chatroom, @message ], html: { class: "chatroom-msg-form"}, remote: true do |f| %>
       <%= f.input :content, label: false, placeholder: "Message #{@chatroom.name}" %>
-
     <% end %>
   </section>
 </div>

@@ -33,12 +33,29 @@ class SeedsHelper
   def self.gen_chat_post_comment (category, city, forum, user)
     chatroom = Chatroom.create!(name: "#{ category }/#{ city.name }", forum: forum )
 
-    4.times do
-      post = Post.create!(user: user, forum: forum, content: Faker::Quote.matz, title: Faker::Quote.singular_siegler)
+    1.times do
+      if category == 'General'
+        post = Post.create!(user: user, forum: forum, content: "The idea is to share your thoutghs about the city!", title: "Tell us your experience in #{city.name}!")
+      elsif category == 'Work'
+        post = Post.create!(user: user, forum: forum, content: "Looking for a job? Need an employee? Found the right place!;)", title: "Opportunities in #{city.name}!")
+      else
+        post = Post.create!(user: user, forum: forum, content: 'Looking for someone to go on an adventure?? Let the games begin!', title: "Extreme #{city.name}!")
+      end
 
-      4.times do
-        comment = Comment.create!(content: Faker::Quote.matz, user: user, post: post)
-        message = Message.create!(user: user, content: Faker::Quote.matz, chatroom: chatroom)
+      1.times do
+        if category == 'General'
+          comment = Comment.create!(content: 'Amazing, the locals are great!', user: user, post: post)
+          comment = Comment.create!(content: "Best food I've ever had!", user: user, post: post)
+          message = Message.create!(user: user, content: 'Hellooooo!', chatroom: chatroom)
+        elsif category == 'Work'
+          comment = Comment.create!(content: "I'm looking for a job! Experienced Rails Developer!", user: user, post: post)
+          comment = Comment.create!(content: "I also need a Designer, for my next app!", user: user, post: post)
+          message = Message.create!(user: user, content: 'Good evening, everyone!', chatroom: chatroom)
+        else
+          comment = Comment.create!(content: 'Who wants to go on a skydiving adventure?', user: user, post: post)
+          comment = Comment.create!(content: "I'm looking for an adrenaline junkie! Let's let's go bungee jumping!!!!", user: user, post: post)
+          message = Message.create!(user: user, content: "Hi, everyone!", chatroom: chatroom)
+        end
       end
     end
   end
@@ -54,7 +71,7 @@ class SeedsHelper
       bio: Faker::Quote.jack_handey,
       email: "#{name}_#{last_name}@gmail.com", 
       password: "123456",
-      username: "#{ name }_#{(1..99).to_a.sample}"
+      username: "#{name}_#{(1..99).to_a.sample}"
       )
     )
   end

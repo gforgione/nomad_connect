@@ -1,6 +1,6 @@
 const newPostModal = () => {
   const createBtn = document.querySelector("#new-post-btn");
-  const createForm = document.querySelector(".new-post-form");
+  const createForm = document.querySelector(".create-post-form");
 
   if (createBtn) {
     createBtn.addEventListener('click', (event) => {

@@ -1,4 +1,6 @@
 <div class="comment" id="comment-<%= comment.id %>">
-  <p class="comment-header"><%= "#{comment.user.username} on #{comment.created_at.strftime("%B %-d, %Y %-l:%M%p")}"%></b></p>
-  <p><%= "#{comment.content}"%></p>
+  <% user_photo = get_photo_key(comment.user)  %>
+  <%= cl_image_tag user_photo, class: "rounded-circle mr-2", height: 30, width: 30 %>
+  <span class="author"><%= link_to comment.user.username, user_path(comment.user_id), class:"user-comment"%> <%= "on #{comment.created_at.strftime("%B %-d, %Y %-l:%M%p")}"%></span>
+  <p style="margin-left: 2.5rem"><%= "#{comment.content}"%></p>
 </div>

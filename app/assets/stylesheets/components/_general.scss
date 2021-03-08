@@ -1,3 +1,22 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before,*:after {
+  box-sizing: inherit;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  //font-family: ;
+  // font-size: ;
+  background-color: white;  
+}
+
+
+
 a {
   text-decoration: none;
   
