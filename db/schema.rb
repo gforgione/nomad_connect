@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_05_144430) do
+
+ActiveRecord::Schema.define(version: 2021_03_09_145052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_03_05_144430) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "calendar_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -133,6 +135,11 @@ ActiveRecord::Schema.define(version: 2021_03_05_144430) do
     t.string "refresh_token"
     t.string "provider"
     t.string "uid"
+    t.string "website"
+    t.string "twitter"
+    t.string "instagram"
+    t.string "github"
+    t.string "facebook"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

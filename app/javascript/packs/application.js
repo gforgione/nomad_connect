@@ -29,6 +29,7 @@ import "bootstrap";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { initPostCable } from "../channels/post_channel";
 import { newPostModal } from "../channels/new_post";
+import { addSocials } from "../channels/social_buttons";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -36,4 +37,5 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   initPostCable();
   newPostModal();
+  addSocials();
 });

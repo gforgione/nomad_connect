@@ -71,6 +71,8 @@ end
       user.last_name = namearray[1]
       image = URI.open(auth.info.image)
       user.photo.attach(io: image, filename: "image.jpg")
+      user.github = auth.info.urls.GitHub
+    
       user.save!
       user
     end
