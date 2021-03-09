@@ -4,8 +4,8 @@ require 'openssl'
 class HeadlinesController < ApplicationController
     
     def index
-        @city = City.find(params[:city_id]).name
-        url = URI("https://webit-news-search.p.rapidapi.com/search?q=#{@city}&language=en&number=10")
+        @city = City.find(params[:city_id])
+        url = URI("https://webit-news-search.p.rapidapi.com/search?q=#{@city.name}&language=en&number=10")
 
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl = true
