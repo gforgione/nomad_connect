@@ -1,24 +1,24 @@
-<div class="weather-info-container">
-  <div class="d-flex justify-content-between">
-    <div class="d-flex mt-4 ml-4">
-      <i class="fas fa-map-marker-alt mr-2"></i>
-      <h2> <%= @city_name %> <%=@weather_results[:condtion] %> </h2>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-4 col-sm-12 col-xs-12">
+            <div class="card-weather p-4">
+                <div class="d-flex mt-2">
+                    <h4 class="flex-grow-1">Local Time: </h4>          
+                    <h4><%= @weather_time.split[1] %></h4> 
+                </div>
+                <div class="d-flex flex-column temp">
+                    <%=@weather_results[:condtion] %> 
+                    <h1 class="mb-0 font-weight-bold" id="heading"> <%= @weather_results[:temp_c].to_i %> °</h1> 
+                </div>
+                <div class="d-flex">
+                    <div class="temp-details flex-grow-1">
+                        <p class="my-1"> <img src="https://i.imgur.com/B9kqOzp.png" height="17px"> <%= @weather_results[:wind_dir] %> at <%= @weather_results[:wind_kph]  %> kph </p>
+                        <p class="my-1"> <i class="fa fa-tint mr-2" aria-hidden="true"></i> <%= @weather_results[:humidity] %>%  </p>
+                        <p class="my-1"> <img src="https://i.imgur.com/wGSJ8C5.png" height="17px"> <%= @weather_results[:feelslike_c] %>° </p>
+                    </div>
+                    <div> <img src="https://<%=@weather_condition_icon%>" class="weather-icon"> </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <h3 class="mt-4 mr-4"> <%= @weather_results[:temp_c].to_i %> °</h3>
-  </div>
-  <img src="https://<%=@weather_condition_icon%>" class="weather-icon">
-  <div class="bottom-info align-bottom ml-4">
-    <div class="d-flex justify-content-between">
-      <div>
-        <p>Feels like: <br> <%= @weather_results[:feelslike_c] %>° </p>
-      </div>
-      <div>
-        <p>Humidity: <br> <%= @weather_results[:humidity] %>% </p>
-      </div>
-      <div class="mr-2">
-        <p>Wind: <br> <%= @weather_results[:wind_dir] %> at <%= @weather_results[:wind_kph]  %> kph </p>
-      </div>
-    </div>
-
-
-  </div>
+</div>
