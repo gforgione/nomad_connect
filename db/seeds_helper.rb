@@ -20,14 +20,30 @@ class SeedsHelper
     'Budapest', 
     'Prague', 
     'Amsterdam', 
-    'Singapore', 
-    'Sydney', 
-    'Vancouver', 
-    'Venice',
-    'Porto',
-    'Beijing',
-    'Bergen',
-    'Copenhagen'
+    'Singapore'
+  ]
+  CALENDAR_ID = [
+    "u4db1ernvfc20f9p5m68kokc8g@group.calendar.google.com",
+    "fr6l6iohckfhp97js5ekehttlo@group.calendar.google.com",
+    "dvtsegrpcsm0r4db3ss4kiqo1k@group.calendar.google.com",
+    "p7pl4q2ng9bgic5q4gr92lc17o@group.calendar.google.com",
+    "qgh1la8ebs19v1fncsv6ke8e6k@group.calendar.google.com",
+    "3bfdgpjblt4unl78fce9sepnm0@group.calendar.google.com",
+    "jlh61kuh97rkt21ev1ue5n7ci4@group.calendar.google.com",
+    "vdois991duaef4avt0qe26snc4@group.calendar.google.com",
+    "21dm2votkrutvla4g8bnjpqe8k@group.calendar.google.com",
+    "5k3o8nr5f5dd6aehuuvb9fb568@group.calendar.google.com",
+    "ddle1p936aqvp7gitounfi4218@group.calendar.google.com",
+    "qop015ik6h60o46a1c9c4mippc@group.calendar.google.com",
+    "qmsg89nd80dald53ri0ch9hmfc@group.calendar.google.com",
+    "l3ou6lofvm9j307ptegtnjrr1c@group.calendar.google.com",
+    "are13bipqeo2gql64l2n205k8o@group.calendar.google.com",
+    "msbtj12ejj6mt8u96og65832es@group.calendar.google.com",
+    "ia01n667gsvsi6o999a1rj9424@group.calendar.google.com",
+    "pmr4o20177eqvqei6r8nt8idkc@group.calendar.google.com",
+    "8ud29h44ki5ngr7btv87ms12a0@group.calendar.google.com",
+    "03n4uu3f0gfias1hsajt4nep08@group.calendar.google.com",
+    "h9122cllgtcdhvh1u3al7uetsg@group.calendar.google.com"
   ]
 
   def self.gen_chat_post_comment (category, city, forum, user)
@@ -88,7 +104,7 @@ class SeedsHelper
     )
   end
 
-  def self.gen_city(cities, city_index)
-    return City.create!(name: cities[city_index])
+  def self.gen_city(cities, city_index, calendar_id)
+    return City.create!(name: cities[city_index], calendar_id: calendar_id[city_index])
   end
 end
