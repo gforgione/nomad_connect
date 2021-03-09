@@ -1,14 +1,19 @@
 .weather-info-container {
     width: 400px;
-    height: 350px;
-    background-color:#B2B2B2;
+    height: 200px;
+    
     color: white;
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .weather-icon {
-    margin: 50px auto;
+    margin: auto;
     display: block;
-   align-items: center;
+    align-items: center;
     height: 100px;
     width: 100px;
 }
