@@ -1,19 +1,37 @@
 <nav class="navbar bg-primary navbar-expand-sm">
-  <a class="navbar-brand" href="">NomadConnect</a>
+  <%= link_to "NomadConnect", root_path, class: "navbar-brand w-25" %>
   <%# Middle nav buttons %>
   <div class="navbar-nav w-auto mx-auto">
-    <a class="nav-item nav-link" href="#">Link 1</a>
-    <a class="nav-item nav-link" href="#">Link 2</a>
-    <a class="nav-item nav-link" href="#">Link 3</a>
+    <% if @city %>
+      <%= link_to @city.name, city_path(@city), class: "nav-item nav-link" %>
+      <%= link_to "Discussion", city_forum_posts_path(@city, @city.forums.first), class: "nav-item nav-link" %>
+      <%= link_to "Events", city_events_path(@city), class: "nav-item nav-link" %>
+      <%= link_to "News", city_headlines_path(@city), class: "nav-item nav-link" %>
+      <%= link_to "FAQ", city_path(@city), class: "nav-item nav-link" %>
+    <% end %>
   </div>
 
   <%# Avatar button %>
-  <div class="navbar-nav ">
+  <div class="navbar-nav w-25 justify-content-end mb-0">
+    <%= link_to "Cities", root_path, class: "nav-item nav-link my-auto mr-1" %>
+    <% if user_signed_in? %>
+      <%= link_to current_user.username, user_path(current_user), class: "nav-item nav-link my-auto mr-0 nav-username"%>  
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "nav-item nav-link my-auto mr-1"%>  
+    <% end %>
+
     <div class="dropdown">    
-      <%= link_to "Avatar", "#", class: "nav-item nav-link dropdown-toggle navbar-avatar", id: "profileDropdown", data: {toggle: "dropdown"}, "aria-haspopup": true, "aria-expanded": false %>
-        <div class="dropdown-menu bg-primary" aria-labelledby="profileDropdown">
-          <a class="dropdown-item " href="#">Profile</a>
-          <a class="dropdown-item" href="#">Logout</a>
+      <%= link_to "#", class: "nav-item nav-link dropdown-toggle navbar-avatar mr-1", id: "profileDropdown", data: {toggle: "dropdown"}, "aria-haspopup": true, "aria-expanded": false do%>
+        <% user_photo = get_photo_key(current_user)  %>
+        <%= cl_image_tag user_photo, crop: :thumb, gravity: :face, class: "avatar ml-1"%>
+      <% end %>
+
+        <div class="dropdown-menu bg-primary mt-0" aria-labelledby="profileDropdown">
+          <% if user_signed_in? %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item"%>
+          <% else %>
+            <%= link_to "Log in", new_user_session_path, class: "dropdown-item"%>
+          <% end %>
         </div>
     </div>
   </div>
