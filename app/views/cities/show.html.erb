@@ -2,7 +2,7 @@
   <div class="img-container">
     
     <% city_photo = get_photo_key_city(@city)  %>
-    <%= image_tag city_photo, class: "img-show-city"%>
+    <%= cl_image_tag city_photo, class: "img-show-city"%>
     <h1 class="text-center p-4 m-4 main-title"><%= @city.name %></h1>
     <%= render partial: "shared/weather", locals: {weather_results: @weather_results, city_name: @city_name} %>
   </div>
