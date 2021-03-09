@@ -12,7 +12,7 @@
     <% end %>
   </section>
   <section class="posts-container">
-    <button class="btn btn-small bg-white border border-dark ml-3" id="new-post-btn"><i class="fas fa-plus text-primary"></i> Create</button>
+    <button class="btn btn-small bg-white border border-dark ml-3" id="new-post-btn" <%= user_signed_in? ? "" : "disabled" %>><i class="fas fa-plus text-primary"></i> Create</button>
     <%= simple_form_for [@current_forum, @post],  html: { class: "create-post-form"}, remote: true do |f| %>
       <%= f.input :title, placeholder: "Title" %>
       <%= f.input :content, label: false, placeholder: "Content" %>
@@ -34,7 +34,7 @@
       <% end %>
     </div>
     <%= simple_form_for [ @chatroom, @message ], html: { class: "chatroom-msg-form"}, remote: true do |f| %>
-      <%= f.input :content, label: false, placeholder: "Message #{@chatroom.name}" %>
+      <%= f.input :content, label: false, disabled: user_signed_in? ? false : true, placeholder: user_signed_in? ? "Message here" : "Sign in to send a message" %>
     <% end %>
   </section>
 </div>
