@@ -25,6 +25,7 @@ class CitiesController < ApplicationController
     response = http.request(request)
     jsonhash = JSON.parse(response.read_body).deep_symbolize_keys
     @weather_results = jsonhash[:current]
+    @weather_time = jsonhash[:location][:localtime]
     @weather_condition_icon = @weather_results[:condition][:icon][2..-1]
   end
 
