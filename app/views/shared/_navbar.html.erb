@@ -9,16 +9,15 @@
 
   <%# Avatar button %>
   <div class="navbar-nav ">
-    <div class="dropdown">
-      <a class="nav-item nav-link dropdown-toggle navbar-avatar" 
-        data-toggle="dropdown" id="profileDropdown"
-        aria-has-popup="true" aria-expanded="false" 
-        href="#">Avatar</a>
-
-        <div class="dropdown-menu" aria-labelledby="profileDropdown">
-          <a class="dropdown-item" href="#">Profile</a>
+    <div class="dropdown">    
+      <%= link_to "Avatar", "#", class: "nav-item nav-link dropdown-toggle navbar-avatar", id: "profileDropdown", data: {toggle: "dropdown"}, "aria-haspopup": true, "aria-expanded": false %>
+        <div class="dropdown-menu bg-primary" aria-labelledby="profileDropdown">
+          <a class="dropdown-item " href="#">Profile</a>
           <a class="dropdown-item" href="#">Logout</a>
         </div>
     </div>
   </div>
 </nav>
+
+
+
