@@ -1,5 +1,5 @@
 
-<h1 class="forum-header"> <%= "#{@current_forum.name}" %></h4>
+<h1 class="forum-header p-4 mb-0"> <%= "#{@current_forum.name}" %></h4>
 <div class="discussions-container">
   <section class="aside">
     <%= link_to city_path(@city) do %>
@@ -12,11 +12,11 @@
     <% end %>
   </section>
   <section class="posts-container">
-    <button class="btn btn-primary btn-small" id="new-post-btn"><i class="fas fa-plus"></i> Create Post</button>
+    <button class="btn btn-small bg-white border border-dark ml-3" id="new-post-btn"><i class="fas fa-plus text-primary"></i> Create</button>
     <%= simple_form_for [@current_forum, @post],  html: { class: "create-post-form"}, remote: true do |f| %>
       <%= f.input :title, placeholder: "Title" %>
       <%= f.input :content, label: false, placeholder: "Content" %>
-      <%= f.submit "Create Post" %>
+      <%= f.submit "Post" %>
     <% end %>
 
     <% if @current_forum.posts.any? %>
