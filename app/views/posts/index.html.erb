@@ -2,11 +2,11 @@
 <h1 class="forum-header p-2 mb-0"> <%= "#{@current_forum.group}" %></h4>
 <div class="discussions-container">
   <section class="aside">
+    <header>Groups</header>
+    
     <%= link_to city_path(@city) do %>
       <%= cl_image_tag get_photo_key_city(@city), class: "city-banner", width: 200, crop: :fill%>
     <% end %>
-    
-    <header>Groups</header>
     <% @forums.each do |forum| %>
       <%= forum_link(forum) %>
     <% end %>
