@@ -1,8 +1,7 @@
-$background-color: #e0e8f0e3;
-
 .forum-header {
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  color: black;
+  background-color: $background-color
 }
 
 .city-banner {
@@ -75,7 +74,7 @@ $background-color: #e0e8f0e3;
   background-color: white;
   margin: 25px 15px;
   border-radius: 15px;
-  border: 2px solid #046CE7;
+  border: 1px solid black;
 }
 
 .post-item {
