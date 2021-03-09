@@ -2,6 +2,7 @@
   position: relative;
   max-height: 30%;
   
+  
 }
 
 .img-show-city {
@@ -16,12 +17,13 @@
 .main-title {
   margin: 0;
   position: absolute;
-  top: 15%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 150px;
+  font-size: 100px;
   letter-spacing: 10px;
   color: white;
+  text-shadow: 2px 2px black;
   
 }
 
