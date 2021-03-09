@@ -3,7 +3,7 @@
   <%# Middle nav buttons %>
   <div class="navbar-nav w-auto mx-auto">
     <% if @city %>
-      <%= link_to @city.name, city_path(@city), class: "nav-item nav-link" %>
+      <%= link_to @city.name, city_path(@city), class: "nav-item nav-link nav-current-city" %>
       <%= link_to "Discussion", city_forum_posts_path(@city, @city.forums.first), class: "nav-item nav-link" %>
       <%= link_to "Events", city_events_path(@city), class: "nav-item nav-link" %>
       <%= link_to "News", city_headlines_path(@city), class: "nav-item nav-link" %>
@@ -21,13 +21,14 @@
     <% end %>
 
     <div class="dropdown">    
-      <%= link_to "#", class: "nav-item nav-link dropdown-toggle navbar-avatar mr-1", id: "profileDropdown", data: {toggle: "dropdown"}, "aria-haspopup": true, "aria-expanded": false do%>
+      <%= link_to "#", class: "nav-item nav-link dropdown-toggle navbar-avatar nav-drop-style", id: "profileDropdown", data: {toggle: "dropdown"}, "aria-haspopup": true, "aria-expanded": false do%>
         <% user_photo = get_photo_key(current_user)  %>
         <%= cl_image_tag user_photo, crop: :thumb, gravity: :face, class: "avatar ml-1"%>
       <% end %>
 
         <div class="dropdown-menu bg-primary mt-0" aria-labelledby="profileDropdown">
           <% if user_signed_in? %>
+            <%= link_to "Profile", user_path(current_user), class: "dropdown-item"%>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item"%>
           <% else %>
             <%= link_to "Log in", new_user_session_path, class: "dropdown-item"%>

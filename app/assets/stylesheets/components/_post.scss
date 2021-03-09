@@ -1,7 +1,7 @@
 .forum-header {
   text-align: center;
   color: black;
-  background-color: $background-color
+  background-color: $background-color;
 }
 
 .city-banner {
@@ -34,7 +34,7 @@
   header {
     text-align: center;
     border-bottom: 2px solid grey;
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 20px;
     border-bottom: 2px solid grey;
   }
@@ -79,7 +79,7 @@
 
 .post-item {
   border: 1px solid black;
-  font-size: 16px;
+  font-size: 14px;
   padding: 20px;
   padding-bottom: 5px;
   background-color: white;
@@ -91,7 +91,7 @@
     border-bottom: solid 1px grey;
 
     header {
-      font-size: 24px;
+      font-size: 18px;
     }
     small {
       font-size: 12px;
@@ -103,7 +103,7 @@
   }
   
   .comment {
-    font-size: 15px;
+    font-size: 14px;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
@@ -139,11 +139,12 @@
   padding: 20px 10px;
   border-radius: 5px;
   border: 1px solid black;
+  font-size: 14px;
 
   header {
     text-align: center;
     border-bottom: 2px solid grey;
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 20px;
     border-bottom: 2px solid grey;
   }
@@ -163,8 +164,8 @@
   width: 80%;
   margin: 10px;
   border-radius: 10px;
-  background-color:#797878;
-  color: white;
+  background-color: #F0F2F5;
+  color: black;
   margin-bottom: 0;
   display: inline-block;
   word-wrap: break-word;
@@ -185,7 +186,8 @@
 }
 
 .chatroom-msg-form {
-  width:90%;
+  width: 90%;
+  font-size: 14px;
   margin-top: 15px;
   border-top: 2px solid black;
   position: absolute;
