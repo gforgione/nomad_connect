@@ -42,7 +42,9 @@ gem 'google-api-client'
 gem "omniauth", "~> 1.9.1"
 gem 'omniauth-facebook'
 gem 'omniauth-github'
+gem 'googleauth'
 gem 'faker'
+
 
 group :development, :test do gem 'pry-byebug'
   gem 'pry-rails'

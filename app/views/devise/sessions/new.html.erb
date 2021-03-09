@@ -41,10 +41,19 @@
 <i class="fab fa-facebook-f"></i><p>Login with FaceBook</p>
 </div>
 <% end %>
-<%= link_to user_google_oauth2_omniauth_authorize_path do %>
-<div class= "google-button d-flex link-btn">
-<img src="https://img.icons8.com/fluent/48/000000/google-logo.png"/><p>Login with Google</p>
-</div>
+<% if current_user %>
+  <%= link_to user_google_oauth2_omniauth_authorize_path(user_id: current_user.id) do %>
+    <div class= "google-button d-flex link-btn">
+      <img src="https://img.icons8.com/fluent/48/000000/google-logo.png"/><p>Login with Google</p>
+    </div>
+<% end %>
+<% else  %>
+  <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+    <div class= "google-button d-flex link-btn">
+      <img src="https://img.icons8.com/fluent/48/000000/google-logo.png"/><p>Login with Google</p>
+    </div>
+<% end %>
+
 <% end %>
 <%= link_to user_github_omniauth_authorize_path do %>
 <div class= "github-button d-flex link-btn">

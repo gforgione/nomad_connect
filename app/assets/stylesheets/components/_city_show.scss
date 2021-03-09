@@ -1,3 +1,30 @@
+.img-container {
+  position: relative;
+  max-height: 30%;
+  
+}
+
+.img-show-city {
+  opacity: 0.6;
+  height: 40rem;
+  width: 100%;
+  
+  
+  
+}
+
+.main-title {
+  margin: 0;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 150px;
+  letter-spacing: 10px;
+  color: white;
+  
+}
+
 .card-feature {
   background-size: cover;
   background-position: center;
