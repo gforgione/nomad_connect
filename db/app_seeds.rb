@@ -5,6 +5,8 @@ class AppSeeds
   @@users = []
   @@forum_categories = ["General", "Work", "Adventures"]
   @@cities = SeedsHelper::CITIES_ARRAY
+  @@calendar_ids = SeedsHelper::CALENDAR_ID
+  @@photo_keys = SeedsHelper::PHOTO_KEYS
   @@city_index = 0
 
   def self.generate_environment
@@ -18,7 +20,7 @@ class AppSeeds
   def self.gen_jerry
     user = SeedsHelper.jerry_user
 
-    5.times do
+    6.times do
       city = SeedsHelper.gen_city(@@cities, @@city_index)
       @@city_index += 1
   
@@ -63,9 +65,7 @@ class AppSeeds
       print '##################'
       user = SeedsHelper.gen_user
 
-      num_of_cities = (2..4).to_a.sample
-
-      num_of_cities.times do
+      3.times do
         city = SeedsHelper.gen_city(@@cities, @@city_index)
         @@city_index += 1
     
