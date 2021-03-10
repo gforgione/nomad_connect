@@ -12,7 +12,7 @@
                 <h4><%= @user.first_name %> <%= @user.last_name %></h4>
                 <% if @user == current_user  %>
                 <div class="mt-3">
-                  <%= link_to "Edit your profile",  edit_user_registration_path(current_user), class: "btn btn-primary"%>
+                  <%= link_to "Edit your profile",  edit_user_registration_path(current_user), class: "btn btn-dark"%>
                 </div>
                 <% end  %>
               </div>
