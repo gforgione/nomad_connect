@@ -2,7 +2,8 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 class HeadlinesController < ApplicationController
-    
+    skip_before_action :authenticate_user!
+
     def index
         @city = City.find(params[:city_id])
         url = URI("https://webit-news-search.p.rapidapi.com/search?q=#{@city.name}&language=en&number=10")
