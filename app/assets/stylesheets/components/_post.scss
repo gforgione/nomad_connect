@@ -85,11 +85,12 @@
   background-color: white;
   margin: 25px 15px;
   border-radius: 15px;
+  word-break: break-word;
 
   .post-content {
     margin-bottom: 4px;
     border-bottom: solid 1px grey;
-
+    font-size: 15px;
     header {
       font-size: 18px;
     }
@@ -182,6 +183,7 @@
 
 .current-user-message {
   background-color: #046CE7;
+  color:white;
   align-self: flex-end;
 }
 

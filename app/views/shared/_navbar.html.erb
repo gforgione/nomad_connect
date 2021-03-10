@@ -21,7 +21,7 @@
     <% end %>
 
     <div class="dropdown">    
-      <%= link_to "#", class: "nav-item nav-link dropdown-toggle navbar-avatar nav-drop-style", id: "profileDropdown", data: {toggle: "dropdown"}, "aria-haspopup": true, "aria-expanded": false do%>
+      <%= link_to "#", class: "nav-item nav-link dropdown-toggle navbar-avatar nav-drop-style ml-0", id: "profileDropdown", data: {toggle: "dropdown"}, "aria-haspopup": true, "aria-expanded": false do%>
         <% user_photo = get_photo_key(current_user)  %>
         <%= cl_image_tag user_photo, crop: :thumb, gravity: :face, class: "avatar ml-1"%>
       <% end %>
