@@ -1,7 +1,7 @@
 // .weather-info-container {
 //     width: 400px;
 //     height: 200px;
-    
+
 //     color: white;
 //     margin: 0;
 //     position: absolute;
@@ -23,36 +23,37 @@
 // }
 
 .card-weather {
-    background-color: rgba(255, 255, 255, 0.65) ;
-    font-family: 'Marcellus', serif;
-    font-weight: 900;
-    position: absolute;
-    bottom: 50px;
-    left: 60px;
-    border-radius: 50px;
-    width: 80%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	background-color: rgba(255, 255, 255, 0.65);
+	font-family: "Marcellus", serif;
+	font-weight: 900;
+	position: absolute;
+	bottom: 50px;
+	left: 67px;
+	border-radius: 50px;
+	width: 75%;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	user-select: none;
 }
 
 #heading {
-    font-size: 55px;
-    color: #2b304d
+	font-size: 55px;
+	color: #2b304d;
 }
 
 .temp {
-    place-items: center
+	place-items: center;
 }
 
-.temp-details>p>span,
+.temp-details > p > span,
 .grey {
-    color: #a3acc1;
-    font-size: 12px
+	color: #a3acc1;
+	font-size: 12px;
 }
 
 .fa {
-    color: #a5a5b1;
+	color: #a5a5b1;
 }
 
 *:focus {
-    outline: none
+	outline: none;
 }
