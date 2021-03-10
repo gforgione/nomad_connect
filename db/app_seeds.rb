@@ -6,6 +6,7 @@ class AppSeeds
   @@forum_categories = ["General", "Work", "Adventures"]
   @@cities = SeedsHelper::CITIES_ARRAY
   @@calendar_ids = SeedsHelper::CALENDAR_ID
+  @@photo_keys = SeedsHelper::PHOTO_KEYS
   @@city_index = 0
 
   def self.generate_environment
