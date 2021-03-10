@@ -1,19 +1,20 @@
 const addSocials = () => {
-const socialsButton = document.querySelector(".add-socials-button");
+const socialsButtons = document.querySelectorAll(".add-socials-button");
 const inputRender = document.querySelector(".input-form-holder");
-
+socialsButtons.forEach((socialsButton) =>  {
 if (socialsButton) {
   socialsButton.addEventListener('click', (event) => {
     event.preventDefault();
-    if (inputRender.style.display === "none" || inputRender.style.display === "") {
-      inputRender.style.display = "block";
+    debugger;
+    if (socialsButton.parentElement.nextElementSibling.style.display === "none" || socialsButton.parentElement.nextElementSibling.style.display === "") {
+      socialsButton.parentElement.nextElementSibling.style.display = "block";
       socialsButton.style.display = "none"
     } else {
-      inputRender.style.display = "none"
+      socialsButton.parentElement.nextElementSibling.style.display = "none"
     }
   });
 };
 
+});
 };
-
 export { addSocials };
