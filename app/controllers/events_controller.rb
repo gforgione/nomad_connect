@@ -3,6 +3,8 @@ require "google/api_client/client_secrets.rb"
 require 'googleauth'
 require 'google_calendar'
 class EventsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index 
     @city = City.find(params[:city_id])
   end 

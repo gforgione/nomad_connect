@@ -1,3 +1,23 @@
-<% @news_results.each do |result| %>
-<%= render partial: "shared/headlines", locals: {result: result}, class: "headline" %>
-<% end %>
+<section class="container-flex" id="projects">
+ 
+  <div class="row justify-content-center">
+  
+  <%@news_results.each do |result|  %>
+    <div class="col-4 project-card mr-5">
+     
+      <%= image_tag result[:image], class: "img-headlines" %>
+        <div class="project-card-content">
+          <h4>
+            <b>
+            <a href="<%=result[:url]%>" target="_blank"><%= result[:title]%> </a>
+            </b>
+          </h4>
+          <p>Author: <%= result[:author] %></p>
+          <p>Source: <%= result[:source_name] %></p>
+        </div>
+        
+    </div>
+  <%end%>
+  </div>
+  
+</section>
