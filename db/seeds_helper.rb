@@ -46,31 +46,28 @@ class SeedsHelper
     "h9122cllgtcdhvh1u3al7uetsg@group.calendar.google.com"
   ]
   PHOTO_KEYS = [
-    "0qtt3be7cbzw2j7rxd9fkdos8e02",
-    "e145i1awz4vu5uqxpm0rxgm7yq24",
-    "j4abx9e6eomjrm4k09wa57k738ya",
-    "t04v1knysrlwd7q6dur3ekobu41n",
-    "loox1jgok6sku3u8l843f9hjwi4h",
-    "4r5697joyh5g2541ayb4txzmffz8",
-    "e2hgbwqyp95jelimrw1h9x6p4vv9",
-    "r12q9h7e3q4kl4i41f6i13nsfs9t",
-    "rsx2st5xag5tlp9ahtwnguvst1y0",
-    "2402he9xj33te4c9ik9d5udipj68",
-    "nuxivd15ziw6vqbz8oqy8aqyu1si",
-    "gdijkjqarj4thcivb27umcjs8a3r",
-    "38upinfefxfbiyd2p5bgn85poi9n",
-    "gq379fpxyfl2bhyrrnkkdyfcgg5i",
-    "5mtqx4an2yd3xhwoeihcefiq8eq3",
-    "wqffhzzqgg5fttk7g269mbba02y9",
-    "5chxqt18l1jh03fbgcd0icpbfflu",
-    "wajncsd5kvkl0d9n8tjvjbt0ciyo",
-    "9hqrv8j8iwr58zr0vhgstlfhzgie",
-    "32yqd41eo6jv6iejonrim5s1jgis",
-    "yh75jeqs9iacvzq5rmzudp12u03d",
-    "v9hryci4l9nynbpu5yx3xka9m1vi"
+    "4r5697joyh5g2541ayb4txzmffz8", # Paris
+    "loox1jgok6sku3u8l843f9hjwi4h", # New York
+    "t04v1knysrlwd7q6dur3ekobu41n", # Rio de Janeiro
+    "e2hgbwqyp95jelimrw1h9x6p4vv9", # Barcelona
+    "r12q9h7e3q4kl4i41f6i13nsfs9t", # Lisbon
+    "2402he9xj33te4c9ik9d5udipj68", # Rome
+    "rsx2st5xag5tlp9ahtwnguvst1y0", # London
+    "0qtt3be7cbzw2j7rxd9fkdos8e02", # Dubai
+    "nuxivd15ziw6vqbz8oqy8aqyu1si", # Havana
+    "gdijkjqarj4thcivb27umcjs8a3r", # Madrid
+    "38upinfefxfbiyd2p5bgn85poi9n", # Bruges
+    "9hqrv8j8iwr58zr0vhgstlfhzgie", # Chicago
+    "e145i1awz4vu5uqxpm0rxgm7yq24", # Quebec
+    "gq379fpxyfl2bhyrrnkkdyfcgg5i", # Toronto
+    "5mtqx4an2yd3xhwoeihcefiq8eq3", # Vienna
+    "wqffhzzqgg5fttk7g269mbba02y9", # Tokyo
+    "5chxqt18l1jh03fbgcd0icpbfflu", # Istanbul
+    "wajncsd5kvkl0d9n8tjvjbt0ciyo", # Budapest
+    "32yqd41eo6jv6iejonrim5s1jgis", # Prague
+    "yh75jeqs9iacvzq5rmzudp12u03d", # Amsterdam
+    "v9hryci4l9nynbpu5yx3xka9m1vi", # Singapore
   ]
-
-  PHOTO_IDS = [9, 14, 2, 24, 25, 27, 30, 31, 32, 33, 34, 35, 36, 38, 39, 40, 42, 43, 44]
 
   def self.gen_chat_post_comment (category, city, forum, user)
     chatroom = Chatroom.create!(name: "#{ category }/#{ city.name }", forum: forum )
@@ -126,7 +123,15 @@ class SeedsHelper
     )
   end
 
-  def self.gen_city(cities, city_index, calendar_id)
-    return City.create!(name: cities[city_index], calendar_id: calendar_id[city_index])
+  def self.gen_city(cities, city_index, calendar_id, photo_keys)
+    return (
+      City.create!(
+        name: cities[city_index],
+        calendar_id: calendar_id[city_index],
+        photo_key: photo_keys[city_index]
+      ))
   end
 end
+
+
+

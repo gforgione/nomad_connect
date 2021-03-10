@@ -6,9 +6,8 @@
 }
 
 .img-show-city {
-  opacity: 0.9;
-  filter: saturate(1.1);
-  filter: contrast(1.2);
+  opacity: 0.86;
+  filter: saturate(1.4) contrast(1.1) brightness(.96);
   height: 95vh;
   width: 100%;
   background-size: cover; 
@@ -17,13 +16,18 @@
 .main-title {
   margin: 0;
   position: absolute;
-  top: 30%;
+  background-color: rgba(255, 255, 255, 0.01) ;
+  border-radius: 10px;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 90px;
-  letter-spacing: 10px;
-  color: white;
-  text-shadow: 2px 2px black;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 130px;
+  font-weight: 100;
+  -webkit-text-stroke: 0.5px rgb(102, 102, 102); /* width and color */
+  letter-spacing: 21px;
+  color: rgb(255, 242, 228);
+  text-shadow: 0.4px 0.4px rgb(49, 49, 49);
   
 }
 
