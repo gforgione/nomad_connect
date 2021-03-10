@@ -1,6 +1,10 @@
 .input-form-holder {
   display: none;
   flex-shrink: 1;
+  width: 50%;
+  .form-group {
+    margin-bottom: 0px;
+  }
 }
 .add-socials-button {
   display: block;

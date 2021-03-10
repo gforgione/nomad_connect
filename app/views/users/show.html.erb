@@ -36,10 +36,9 @@
               <span class="text-secondary"><a class="add-socials-button"> +Add Website </a> </span>
               <div class="input-form-holder">
                 <%= render 'shared/social', user: @user, field: :website %>
-
               </div>
               <% else %>
-              <span class="text-secondary"><a href=<%= @user.website%>>
+              <span class="text-secondary"><a href=<%= @user.website %>>
                   <%= truncate(@user.website, length:15) %></a></span>
               <% end  %>
             </li>
