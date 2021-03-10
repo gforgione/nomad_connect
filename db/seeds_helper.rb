@@ -46,9 +46,9 @@ class SeedsHelper
     "h9122cllgtcdhvh1u3al7uetsg@group.calendar.google.com"
   ]
   PHOTO_KEYS = [
-    "4r5697joyh5g2541ayb4txzmffz8", # Paris
+    "rmcqubqu5e44zxbh4dw9rwfpk17q", # Paris
     "loox1jgok6sku3u8l843f9hjwi4h", # New York
-    "t04v1knysrlwd7q6dur3ekobu41n", # Rio de Janeiro
+    "7icmfnd3zqhlml1iz0hxo1bjyjt4", # Rio de Janeiro
     "e2hgbwqyp95jelimrw1h9x6p4vv9", # Barcelona
     "r12q9h7e3q4kl4i41f6i13nsfs9t", # Lisbon
     "2402he9xj33te4c9ik9d5udipj68", # Rome
