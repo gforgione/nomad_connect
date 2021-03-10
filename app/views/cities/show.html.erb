@@ -1,18 +1,12 @@
-
+  
   <div class="img-container">
-    
     <% city_photo = get_photo_key_city(@city)  %>
     <%= cl_image_tag city_photo, class: "img-show-city"%>
-    <h1 class="text-center p-4 m-4 main-title"><%= @city.name %></h1>
+    <h1 class="text-center main-title"><%= @city.name %></h1>
     <%= render partial: "shared/weather", locals: {weather_results: @weather_results, city_name: @city_name} %>
   </div>
 
-
-
-  <div class="container">
-    <h2 class="text-center">Local info</h2>
-    
-
+  <div class="container mb-5">
     <section class="features">
       <%= link_to city_forum_posts_path(@city, @city.forums.first) do %>
         <div class="card-feature" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://shipway-consulting.co.uk/wp-content/uploads/2020/05/conversation-image-2.jpg)">

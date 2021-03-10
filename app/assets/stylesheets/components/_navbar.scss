@@ -1,14 +1,5 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+body {
+  overflow-x: hidden;
 }
 
 .navbar-brand {
@@ -17,11 +8,11 @@
 }
 
 .navbar {
-  padding: 0 50px;
+  padding: 0 15px;
   font-size: 1 rem;
   .nav-item {
     padding: 15px;
-    margin-right: 30px;
+    margin: 0 22px;
   }
 
   color: white;
@@ -33,7 +24,21 @@
     color: #F0F2F5;
   
   } 
-  // .navbar-avatar {
-  //   margin-left: 530px;
-  // }
+}
+.navbar-avatar {
+     width: 40px;
+  }
+
+.nav-username {
+  font-size: .8rem;
+}
+
+.dropdown-menu > a:hover {
+  background-image: none;
+  background-color: #167FFB;
+}
+
+.nav-current-city {
+  font-weight: bold;
+  letter-spacing: 2px;
 }

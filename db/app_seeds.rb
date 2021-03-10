@@ -21,7 +21,7 @@ class AppSeeds
     user = SeedsHelper.jerry_user
 
     6.times do
-      city = SeedsHelper.gen_city(@@cities, @@city_index)
+      city = SeedsHelper.gen_city(@@cities, @@city_index, @@calendar_ids)
       @@city_index += 1
   
       location = Location.create!(user_id: user.id, city_id: city.id)
@@ -40,7 +40,7 @@ class AppSeeds
     # Cities with many users
     3.times do
       print '##################'
-      city = SeedsHelper.gen_city(@@cities, @@city_index)
+      city = SeedsHelper.gen_city(@@cities, @@city_index, @@calendar_ids)
       @@city_index += 1
     
       num_of_users = (4..7).to_a.sample
@@ -66,7 +66,7 @@ class AppSeeds
       user = SeedsHelper.gen_user
 
       3.times do
-        city = SeedsHelper.gen_city(@@cities, @@city_index)
+        city = SeedsHelper.gen_city(@@cities, @@city_index, @@calendar_ids)
         @@city_index += 1
     
         location = Location.create!(user_id: user.id, city_id: city.id)

@@ -126,11 +126,7 @@ class SeedsHelper
     )
   end
 
-  def self.gen_city(cities, city_index)
-    return (
-      City.create!(
-        name: cities[city_index] 
-      )
-    )
+  def self.gen_city(cities, city_index, calendar_id)
+    return City.create!(name: cities[city_index], calendar_id: calendar_id[city_index])
   end
 end

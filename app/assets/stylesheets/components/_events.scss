@@ -1,0 +1,31 @@
+.events-holder {
+  background: white;
+  padding-top: 25px;
+  padding-left: 30px;
+  overflow: auto;
+  max-height: 500px;
+}
+body {
+  background-color: #eceff4;
+}
+.events-list {
+  list-style: none;
+}
+.single-event {
+  border-bottom: 1px rgba(0,0,0, .3) solid;
+padding-top: 10px; 
+padding-bottom: 10px;
+
+p {
+  padding: 0;
+  margin: 0;
+}
+}
+
+.add-btn {
+  width: 170px;
+}
+.event-form-container {
+  width: 50%;
+  margin: 40px auto;
+}
