@@ -1,21 +1,11 @@
-// .headline {
-//   a {
-//     color: black;
-//     &:hover {
-//       color: rgba(150,150,150,.8)
-//     }
-//   }
-// }
-// .news-info-p {
-//   font-size: 10px;
-// }
-
 .news-box {
-  height: 208vh;
+  height: 184vh;
+  margin-top: 0px;
 }
 
 .news-title {
   font-size: 60px;
+  margin-bottom: 5px;
   color: rgb(52,58,64);
 }
 
