@@ -12,7 +12,7 @@
       <%= simple_form_for [@current_forum, @post],  html: { class: "create-post-form"}, remote: true do |f| %>
         <%= f.input :title, placeholder: "Title" %>
         <%= f.input :content, label: false, placeholder: "Content" %>
-        <%= f.submit "Post" %>
+        <%= f.submit "Post", class: "btn btn-dark"%>
       <% end %>
 
       <% if @current_forum.posts.any? %>

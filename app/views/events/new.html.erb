@@ -1,27 +1,29 @@
-<div class="event-form-container" style="height: 80vh">
-  <%= simple_form_for [@city, @event] do |f| %>
-  <div class="field">
-    <%= f.input :summary %>
-  </div>
+<div class="new-event">
+  <div class="event-form-container" style="height: 78vh">
+    <%= simple_form_for [@city, @event] do |f| %>
+    <div class="field">
+      <%= f.input :summary %>
+    </div>
 
-  <div class="field">
-    <%= f.input :description %>
-  </div>
+    <div class="field">
+      <%= f.input :description %>
+    </div>
 
-  <div class="field">
-    <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: 'Select Date...' %>
-  </div>
+    <div class="field">
+      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: 'Select Date...' %>
+    </div>
 
-  <div class="field">
-    <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: 'Select Date...'  %>
-  </div>
+    <div class="field">
+      <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: 'Select Date...'  %>
+    </div>
 
-  <div class="field">
-    <%= f.input :location %>
-  </div>
+    <div class="field">
+      <%= f.input :location %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
+    <div class="actions">
+      <%= f.submit"Create Event", class: "btn btn-dark"%>
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>

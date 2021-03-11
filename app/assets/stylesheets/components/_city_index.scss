@@ -35,11 +35,10 @@
 	font-family: "Times New Roman", Times, serif;
 	font-size: 180px;
 	font-weight: 100;
-	-webkit-text-stroke: 1px rgb(124, 124, 124); /* width and color */
+	-webkit-text-stroke: 1.3px rgb(124, 124, 124); /* width and color */
 	letter-spacing: 25px;
 	color: rgb(250, 239, 226);
-	text-shadow: 0.5px 0.5px rgb(52, 58, 64);
-	user-select: none;
+	text-shadow: 2px 2px rgb(52, 58, 64);
 }
 
 .cities-title {
