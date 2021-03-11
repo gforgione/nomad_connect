@@ -3,10 +3,10 @@
   <%# Middle nav buttons %>
   <div class="navbar-nav w-auto mx-auto">
     <% if @city %>
-      <%= link_to @city.name, city_path(@city), class: "nav-item nav-link nav-current-city" %>
-      <%= link_to "Discussion", city_forum_posts_path(@city, @city.forums.first), class: "nav-item nav-link" %>
-      <%= link_to "Events", city_events_path(@city), class: "nav-item nav-link" %>
-      <%= link_to "News", city_headlines_path(@city), class: "nav-item nav-link" %>
+      <%= link_to @city.name, city_path(@city), class: "#{navbar_active("cities")} nav-item nav-link nav-current-city" %>
+      <%= link_to "Discussion", city_forum_posts_path(@city, @city.forums.first), class: "#{navbar_active("posts")} nav-item nav-link"%>
+      <%= link_to "Events", city_events_path(@city), class: "#{navbar_active("events")} nav-item nav-link" %>
+      <%= link_to "News", city_headlines_path(@city), class: "#{navbar_active("headlines")} nav-item nav-link" %>
       <%= link_to "FAQ", city_path(@city), class: "nav-item nav-link" %>
     <% end %>
   </div>
