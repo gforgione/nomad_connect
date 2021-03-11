@@ -1,4 +1,12 @@
+<div class="content">
+  <%=cl_video_tag "video_eilxor", loop: true, autoplay: true, class: "wrapper"%>
+  
+</div>
+
+
+
 <div class="container">
+
   <section class="cities">
     <% @cities.each do |city| %>
       <%= link_to city_path(city) do %>

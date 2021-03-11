@@ -1,3 +1,24 @@
+.my_video {
+  position: absolute; 
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 50%;
+  width: auto; 
+  height: auto; 
+  z-index: -100;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.content {
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  
+}
+
+
 .card-city {
   background-size: cover;
   background-position: center;
