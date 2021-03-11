@@ -1,36 +1,37 @@
-
-<h1 class="forum-header p-2 mb-0 mt-4 text-primary"> <%= "" %></h4>
-<div class="discussions-container">
-  <section class="aside">
-    <header>Groups</header>
-    <% @forums.each do |forum| %>
-      <%= forum_link(forum) %>
-    <% end %>
-  </section>
-  <section class="posts-container">
-    <button class="btn btn-small bg-white ml-3 btn-create" id="new-post-btn" <%= user_signed_in? ? "" : "disabled" %>><i class="fas fa-plus text-primary"></i> Create</button>
-    <%= simple_form_for [@current_forum, @post],  html: { class: "create-post-form"}, remote: true do |f| %>
-      <%= f.input :title, placeholder: "Title" %>
-      <%= f.input :content, label: false, placeholder: "Content" %>
-      <%= f.submit "Post" %>
-    <% end %>
-
-    <% if @current_forum.posts.any? %>
-      <% @current_forum.posts.order(created_at: :DESC).each do |post| %>
-        <%= render 'post', post: post %>
+<div class="forum-box">
+  <h1 class="forum-header p-2 mb-0 mt-4 text-primary"> <%= "" %></h4>
+  <div class="discussions-container">
+    <section class="aside">
+      <header>Groups</header>
+      <% @forums.each do |forum| %>
+        <%= forum_link(forum) %>
       <% end %>
-    <% end %>
-  </section>
-
-  <section class="chatroom">
-    <header><%= "Livechat - #{current_forum.group}" %></header>
-    <div class="messages-container" id="messages" data-chatroom-id="<%= @chatroom.id %>">
-      <% @chatroom.messages.last(10).each do |message| %>
-        <%= render 'messages/message', message: message %>
+    </section>
+    <section class="posts-container">
+      <button class="btn btn-small bg-white ml-3 btn-create" id="new-post-btn" <%= user_signed_in? ? "" : "disabled" %>><i class="fas fa-plus text-primary"></i> Create</button>
+      <%= simple_form_for [@current_forum, @post],  html: { class: "create-post-form"}, remote: true do |f| %>
+        <%= f.input :title, placeholder: "Title" %>
+        <%= f.input :content, label: false, placeholder: "Content" %>
+        <%= f.submit "Post", class: "btn btn-dark"%>
       <% end %>
-    </div>
-    <%= simple_form_for [ @chatroom, @message ], html: { class: "chatroom-msg-form"}, remote: true do |f| %>
-      <%= f.input :content, label: false, disabled: user_signed_in? ? false : true, placeholder: user_signed_in? ? "Message here" : "Sign in to send a message" %>
-    <% end %>
-  </section>
+
+      <% if @current_forum.posts.any? %>
+        <% @current_forum.posts.order(created_at: :DESC).each do |post| %>
+          <%= render 'post', post: post %>
+        <% end %>
+      <% end %>
+    </section>
+
+    <section class="chatroom">
+      <header><%= "Livechat - #{current_forum.group}" %></header>
+      <div class="messages-container" id="messages" data-chatroom-id="<%= @chatroom.id %>">
+        <% @chatroom.messages.last(10).each do |message| %>
+          <%= render 'messages/message', message: message %>
+        <% end %>
+      </div>
+      <%= simple_form_for [ @chatroom, @message ], html: { class: "chatroom-msg-form"}, remote: true do |f| %>
+        <%= f.input :content, label: false, disabled: user_signed_in? ? false : true, placeholder: user_signed_in? ? "Message here" : "Sign in to send a message" %>
+      <% end %>
+    </section>
+  </div>
 </div>

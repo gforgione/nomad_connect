@@ -1,15 +1,35 @@
+.events-page {
+  height: 78vh;
+  margin-bottom: 7.5vh;
+}
+
+.event-title {
+  margin-top: 100px;
+  margin-bottom: 10vh;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 60px;
+  color: rgb(52,58,64);
+}
 .events-holder {
   background: white;
   padding-top: 25px;
   padding-left: 30px;
   overflow: auto;
   max-height: 500px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-body {
-  background-color: #eceff4;
-}
+
 .events-list {
   list-style: none;
+}
+
+.calendar {
+  border-radius: 10px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 .single-event {
   border-bottom: 1px rgba(0,0,0, .3) solid;
@@ -20,6 +40,15 @@ p {
   padding: 0;
   margin: 0;
 }
+}
+
+.event-new {
+  position: relative;
+  top: 60%;
+}
+
+.new-event {
+  margin-top: 100px;
 }
 
 .add-btn {
