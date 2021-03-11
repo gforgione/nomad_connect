@@ -5,7 +5,7 @@ module ForumsHelper
     adventure = "fas fa-hiking"
     other = "fas fa-campground"
 
-    classes = forum == current_forum ? "forum-name font-weight-bold" : "forum-name"
+    classes = forum == current_forum ? "forum-name font-weight-bold text-primary" : "forum-name"
     forum_name = forum.group.downcase
 
     if forum_name == "general"
@@ -18,7 +18,7 @@ module ForumsHelper
       font_awesome_class = other
     end
     
-    link_to city_forum_posts_path(forum.city, forum), class: classes do 
+    link_to city_forum_posts_path(forum.city, forum), class: classes  do 
       content_tag(:i, '', class: font_awesome_class + " fa-fw") + " " + forum.group
     end
   end

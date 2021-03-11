@@ -35,9 +35,13 @@ body {
 
 .dropdown-menu > a:hover {
   background-image: none;
-  background-color: #167FFB;
+  background-color: #343A40;
 }
 
+.dropdown-menu {
+  background-image: none;
+  background-color: #343A40;
+}
 .nav-current-city {
   font-weight: bold;
   letter-spacing: 2px;

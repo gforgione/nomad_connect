@@ -1,18 +1,14 @@
 
-<h1 class="forum-header p-2 mb-0"> <%= "#{@current_forum.group}" %></h4>
+<h1 class="forum-header p-2 mb-0 mt-4 text-primary"> <%= "" %></h4>
 <div class="discussions-container">
   <section class="aside">
     <header>Groups</header>
-    
-    <%= link_to city_path(@city) do %>
-      <%= cl_image_tag get_photo_key_city(@city), class: "city-banner", width: 200, crop: :fill%>
-    <% end %>
     <% @forums.each do |forum| %>
       <%= forum_link(forum) %>
     <% end %>
   </section>
   <section class="posts-container">
-    <button class="btn btn-small bg-white border border-dark ml-3" id="new-post-btn" <%= user_signed_in? ? "" : "disabled" %>><i class="fas fa-plus text-primary"></i> Create</button>
+    <button class="btn btn-small bg-white ml-3 btn-create" id="new-post-btn" <%= user_signed_in? ? "" : "disabled" %>><i class="fas fa-plus text-primary"></i> Create</button>
     <%= simple_form_for [@current_forum, @post],  html: { class: "create-post-form"}, remote: true do |f| %>
       <%= f.input :title, placeholder: "Title" %>
       <%= f.input :content, label: false, placeholder: "Content" %>
@@ -27,7 +23,7 @@
   </section>
 
   <section class="chatroom">
-    <header><%= "#{current_forum.group} Chatroom" %></header>
+    <header><%= "Livechat - #{current_forum.group}" %></header>
     <div class="messages-container" id="messages" data-chatroom-id="<%= @chatroom.id %>">
       <% @chatroom.messages.last(10).each do |message| %>
         <%= render 'messages/message', message: message %>
