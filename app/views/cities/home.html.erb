@@ -1,12 +1,9 @@
 <div class="content">
-  <%=cl_video_tag "video_eilxor", loop: true, autoplay: true, class: "wrapper"%>
-  
+  <%=cl_video_tag "video_eilxor", loop: true, autoplay: true, class: "wrapper home-video"%>
+  <h1 class="nomad-title">NomadConnect</h1>
 </div>
 
-
-
 <div class="container">
-
   <section class="cities">
     <% @cities.each do |city| %>
       <%= link_to city_path(city) do %>
