@@ -20,6 +20,6 @@
 
   <%= simple_form_for [post, @comment], html: { class: "comment comment-form"}, remote: true do |f| %>
       <%= f.input :content, label: false, placeholder: user_signed_in? ? "Reply here" : "Sign in to reply", disabled: user_signed_in? ? false : true %>
-      <%= f.submit "Comment" %>
+      <%= f.submit "Comment", class: "btn btn-dark"%>
   <% end %>
 </article>
