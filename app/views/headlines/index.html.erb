@@ -1,25 +1,23 @@
-<section class="container-flex" id="projects" style="height: 180vh">
-<h1 class="text-center">Latest news in <%= @city.name %></h1>
- 
-  <div class="row justify-content-center">
-  
-  <%@news_results.each do |result|  %>
-    <div class="col-4 project-card mr-5 cards">
-      
-      <%= image_tag result[:image], class: "img-headlines" %>
-        <div class="project-card-content">
-          <h4>
-            <b>
-            <a href="<%=result[:url]%>" target="_blank" style="color:white"><%= result[:title]%> </a>
-            </b>
-          </h4>
-          
-          <p>Source: <%= result[:source_name] %></p>
-        </div>
-        
-    </div>
-  <%end%>
-  </div>
-  
-</section>
+<div class="news-box">
+  <section class="container-flex" id="projects" style="height: 180vh">
 
+    <h1 class="text-center event-title news-title">Latest news in <%= @city.name %></h1>
+
+    <div class="row justify-content-center">
+      <%@news_results.each do |result|  %>
+        <div class="col-4 project-card mr-5 cards">
+          <%= image_tag result[:image], class: "card-img-top img-headlines" %>
+            <div class="project-card-content">
+              <h4>
+                <b>
+                <div class="card-body description-background">
+                  <a class="card-text description" href="<%=result[:url]%>" target="_blank"><%= result[:title]%> </a>
+                </div>
+                </b>
+              </h4>
+            </div> 
+        </div>
+      <%end%>
+    </div>
+  </section>
+</div> 
