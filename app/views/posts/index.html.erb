@@ -1,8 +1,8 @@
 
-<h1 class="forum-header p-2 mb-0 mt-4 text-primary"> <%= "#{@current_forum.group}" %></h4>
+<h1 class="forum-header p-2 mb-0 mt-4 text-primary"> <%= "" %></h4>
 <div class="discussions-container">
   <section class="aside">
-    <header>Discussion Groups</header>
+    <header>Groups</header>
     <% @forums.each do |forum| %>
       <%= forum_link(forum) %>
     <% end %>

@@ -26,7 +26,7 @@
         <%= cl_image_tag user_photo, crop: :thumb, gravity: :face, class: "avatar ml-1"%>
       <% end %>
 
-        <div class="dropdown-menu bg-primary mt-0" aria-labelledby="profileDropdown">
+        <div class="dropdown-menu bg-dark mt-0" aria-labelledby="profileDropdown">
           <% if user_signed_in? %>
             <%= link_to "Profile", user_path(current_user), class: "dropdown-item"%>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item"%>
