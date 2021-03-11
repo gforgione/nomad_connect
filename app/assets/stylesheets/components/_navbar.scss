@@ -2,14 +2,16 @@ body {
   overflow-x: hidden;
 }
 
-.navbar-brand {
-  font-family: 'Pacifico', cursive;
-  font-size: 1.5rem;
-}
 
 .navbar {
   padding: 0 15px;
-  font-size: 1 rem;
+  font-size: 1.16rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 999;
   .nav-item {
     padding: 15px;
     margin: 0 22px;
@@ -19,15 +21,25 @@ body {
 
   a {
     color: white;
+  
   }
   a:hover {
     color: #F0F2F5;
-  
+    font-weight: bold;
   } 
 }
+
+.navbar-brand {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5rem;
+}
+
+.navbar-brand:hover {
+  font-weight: 100;
+}
 .navbar-avatar {
-     width: 40px;
-  }
+  width: 40px;
+}
 
 .nav-username {
   font-size: .8rem;
