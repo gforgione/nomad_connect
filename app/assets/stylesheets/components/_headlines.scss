@@ -11,36 +11,31 @@
 // }
 
 #projects {
-  
   padding: 2%;
-  
-  background-color: #DAE0E6;
-}
+  max-height: 30%;
+ }
 
-.project-card::before {
-  background-position: center;
-  content: "";
-  border-radius: 8px;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  
-}
 
 .project-card {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin-top: 2%;
-  background: rgb(255, 255, 255);
+  background-size: cover;
+	filter: saturate(1.4) contrast(1.1) brightness(0.96);
   border-radius: 8px;
+  
+  
   
   
 }
 
+
+
 .img-headlines {
-  width:100%;
-  height: 300px;
+  width: 100%;
+  height: 250px;
+  opacity: 0.86;
+  
+ 
   
 }
 
