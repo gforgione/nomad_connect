@@ -1,7 +1,6 @@
 .forum-header {
   text-align: center;
   color: black;
-  background-color: $background-color;
 }
 
 .city-banner {
@@ -13,44 +12,40 @@
   height: 85vh;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  background-color: $background-color;
+  padding: 20px 0px;
 }
 
 //left pane
 .aside {
   width: 14%;
-  height: 70%;
+  height: 82vh;
   text-align: left;
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  padding: 20px;
-  font-size: 20px;
+  padding: 20px 6px;
+  font-size: 22px;
 
-  img {
-    margin-bottom: 10px;
-  }
   header {
-    text-align: center;
-    border-bottom: 2px solid grey;
-    font-size: 20px;
     margin-bottom: 20px;
-    border-bottom: 2px solid grey;
+    margin-left: 5px;
+    font-weight: bolder;
   }
 
   .forum-name {
     padding: 10px 2px;
-    font-size: 18px;
     display: block;
+    color: #343A40;
+
   }
 
   a {
     display: inline-block;
   }
 
+  a:hover {
+    opacity: .8;
+  }
   i {
     display: inline-block;
+    margin-right: 15px;
   }
 }
 
@@ -68,17 +63,20 @@
   }
 }
 
+.btn-create {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
 .create-post-form {
   display: none; /* Hidden by default */
   padding: 15px 30px;
   background-color: white;
   margin: 25px 15px;
   border-radius: 15px;
-  border: 1px solid black;
+  border: none;
+
 }
 
 .post-item {
-  border: 1px solid black;
   font-size: 14px;
   padding: 20px;
   padding-bottom: 5px;
@@ -86,6 +84,7 @@
   margin: 25px 15px;
   border-radius: 15px;
   word-break: break-word;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 
   .post-content {
     margin-bottom: 4px;
@@ -132,15 +131,14 @@
 .chatroom {
   width: 25%;
   position: relative;
-  border-radius: 5px;
-  border: 1px solid black;
+  
   background-color: white;
-  margin: 0 15px;
+  margin: 0 45px 0 15px;
   
   padding: 20px 10px;
   border-radius: 5px;
-  border: 1px solid black;
   font-size: 14px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 
   header {
     text-align: center;
