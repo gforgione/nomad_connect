@@ -1,10 +1,11 @@
-<section class="container-flex" id="projects">
+<section class="container-flex" id="projects" style="height: 200vh">
+<h1 class="text-center">Latest news in <%= @city.name %></h1>
  
   <div class="row justify-content-center">
   
   <%@news_results.each do |result|  %>
-    <div class="col-4 project-card mr-5">
-     
+    <div class="col-4 project-card mr-5 cards">
+      
       <%= image_tag result[:image], class: "img-headlines" %>
         <div class="project-card-content">
           <h4>
@@ -21,3 +22,4 @@
   </div>
   
 </section>
+
