@@ -75,7 +75,7 @@
   padding: 15px 30px;
   background-color: white;
   margin: 25px 15px;
-  border-radius: 15px;
+  border-radius: 10px;
   border: none;
 
 }
@@ -196,4 +196,11 @@
   border-top: 2px solid black;
   position: absolute;
   bottom: 15px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.login-warn-btn {
+  display: block;
+  width: 33%;
 }

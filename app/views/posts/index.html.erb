@@ -8,7 +8,11 @@
       <% end %>
     </section>
     <section class="posts-container">
-      <button class="btn btn-small bg-white ml-3 btn-create" id="new-post-btn" <%= user_signed_in? ? "" : "disabled" %>><i class="fas fa-plus text-primary"></i> Create</button>
+      <% if user_signed_in? %>
+        <button class="btn btn-small bg-white ml-3 btn-create" id="new-post-btn" <%= user_signed_in? ? "" : "disabled" %>><i class="fas fa-plus text-primary"></i> Create</button>
+      <% else %>
+        <%= link_to "Log in to create a new post", user_session_path, class: "btn btn-small btn-primary my-3 mb-5 mx-auto login-warn-btn" %>
+      <% end %>
       <%= simple_form_for [@current_forum, @post],  html: { class: "create-post-form"}, remote: true do |f| %>
         <%= f.input :title, placeholder: "Title" %>
         <%= f.input :content, label: false, placeholder: "Content" %>
