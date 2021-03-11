@@ -1,25 +1,29 @@
+<div class="events-page">
+  <h1 class="display-4 text-center event-title">NomadConnect events in <strong><%= @city.name %></strong></h1>
 
-<h1 class="display-4 text-center mt-4 mb-4">NomadConnect events in <%= @city.name %></h1>
+  <div class="container d-flex">
+    <div class="col-8">
+      <iframe class="calendar" src="https://calendar.google.com/calendar/embed?src=<%=@city.calendar_id%>&=America%2FNew_York" style="border: 0" width="700" height="500" frameborder="0" scrolpng="no"></iframe>
+    </div>
 
-<div class="container d-flex">
-<div class="col-8">
-<iframe src="https://calendar.google.com/calendar/embed?src=<%=@city.calendar_id%>&=America%2FNew_York" style="border: 0" width="700" height="500" frameborder="0" scrolpng="no"></iframe>
+    <section class="events-holder col-4">
+
+      <h2 class="mb-4">Next events in <%= @city.name %></h2>
+
+      <% @city.events.order(:start_date).each do |event| %>
+        <% if event.start_date > DateTime.current %>
+          <div class="single-event">
+            <p><%= event.summary %></p>
+            <div class="d-flex">
+              <p><%= event.start_date.strftime("%b %d, %Y-%I:%M %P ") %></p>-<p>  <%= event.location %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+
+      <div class="single-event event-new">
+        <%= link_to "Add new event",  new_city_event_path(@city), class: "btn btn-dark d-block mx-auto mt-2 mb-2 add-btn" %> 
+      </div>
+    </div>
+  </section>
 </div>
-
-<section class="events-holder col-5 ">
-<h2 class="mb-4">Next events in <%= @city.name %></h2>
-
-<% @city.events.order(:start_date).each do |event| %>
-<% if event.start_date > DateTime.current %>
-<div class="single-event">
-<p><%= event.summary %></p>
-<div class="d-flex"><p><%= event.start_date.strftime("%b %d, %Y-%I:%M %P ") %></p>-<p>  <%= event.location %></p></div>
-</div>
-<% end %>
-<% end %>
-<div class="single-event">
-<%= link_to "Add new event",  new_city_event_path(@city), class: "btn btn-primary d-block mx-auto mt-2 mb-2 add-btn" %> 
-</div>
-</div>
-
-</section>

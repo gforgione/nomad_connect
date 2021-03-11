@@ -6,7 +6,7 @@
 .img-show-city {
 	opacity: 0.86;
 	filter: saturate(1.4) contrast(1.1) brightness(0.96);
-	height: 95vh;
+	height: 94.3vh;
 	width: 100%;
 	background-size: cover;
 	user-select: none;
@@ -23,7 +23,7 @@
 	font-family: "Times New Roman", Times, serif;
 	font-size: 130px;
 	font-weight: 100;
-	-webkit-text-stroke: 0.2px rgb(102, 102, 102); /* width and color */
+	-webkit-text-stroke: 0.25px rgb(102, 102, 102); /* width and color */
 	letter-spacing: 21px;
 	color: rgb(250, 239, 226);
 	text-shadow: 0.2px 0.2px rgb(71, 71, 71);
@@ -40,7 +40,8 @@
 	justify-content: center;
 	align-items: center;
 	color: white;
-	font-size: 24px;
+	font-size: 32px;
+	-webkit-text-stroke: 0.1px rgb(226, 226, 226); /* width and color */
 	font-weight: bold;
 	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 	border-radius: 5px;

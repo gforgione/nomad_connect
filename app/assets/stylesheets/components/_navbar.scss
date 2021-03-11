@@ -10,6 +10,12 @@ body {
 .navbar {
   padding: 0 15px;
   font-size: 1 rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 999;
   .nav-item {
     padding: 15px;
     margin: 0 22px;
