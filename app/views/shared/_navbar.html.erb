@@ -15,7 +15,7 @@
   <div class="navbar-nav w-25 justify-content-end mb-0">
     <%= link_to "Cities", root_path, class: "nav-item nav-link my-auto mr-1" %>
     <% if user_signed_in? %>
-      <%= link_to current_user.username, user_path(current_user), class: "nav-item nav-link my-auto mr-0 nav-username"%>  
+      <%= link_to current_user.username, user_path(current_user), data: {current_user: current_user.id}, class: "nav-item nav-link my-auto mr-0 nav-username"%>  
     <% else %>
       <%= link_to "Login", new_user_session_path, class: "nav-item nav-link my-auto mr-1"%>  
     <% end %>
