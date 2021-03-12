@@ -1,4 +1,4 @@
-<div class="message <%= message.user == current_user ? "current-user-message" : "" %>" id="message-<%= message.id %>">
+<div data-userid="<%= message.user.id %>" class="message <%= message.user == current_user ? "current-user-message" : "" %>" id="message-<%= message.id %>">
   <p class="author">
     <span><%= message.user.username %></span>
     <small><%= message.created_at.strftime("%B %-d, %Y %-l:%M%p") %></small>
