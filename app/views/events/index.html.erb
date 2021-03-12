@@ -1,5 +1,5 @@
 <div class="events-page">
-  <h1 class="display-4 text-center event-title">NomadConnect events in <strong><%= @city.name %></strong></h1>
+  <h1 class="display-4 text-center event-title"> <strong><%= @city.name %> Events </strong></h1>
 
   <div class="container d-flex">
     <div class="col-8">
@@ -10,7 +10,7 @@
       <div class="col-8">
       </div>
 
-      <h2 class="mb-4">Next events in <%= @city.name %></h2>
+      <h2 class="mb-4">Upcoming Events</h2>
 
       <% @city.events.order(:start_date).each do |event| %>
         <% if event.start_date > DateTime.current %>
