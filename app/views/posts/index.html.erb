@@ -29,7 +29,7 @@
     <section class="chatroom">
       <header><%= "Livechat - #{current_forum.group}" %></header>
       <div class="messages-container" id="messages" data-chatroom-id="<%= @chatroom.id %>">
-        <% @chatroom.messages.last(10).each do |message| %>
+        <% @chatroom.messages.last(30).each do |message| %>
           <%= render 'messages/message', message: message %>
         <% end %>
       </div>
