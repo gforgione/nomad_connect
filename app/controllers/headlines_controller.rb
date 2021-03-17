@@ -13,7 +13,7 @@ class HeadlinesController < ApplicationController
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
         request = Net::HTTP::Get.new(url)
-        request["x-rapidapi-key"] = '91fd979ce5mshf7db22bf15c5c2fp1c0523jsn24d1ce702bc1'
+        request["x-rapidapi-key"] = ENV["X_RAPIDAPI_KEY"]
         request["x-rapidapi-host"] = 'webit-news-search.p.rapidapi.com'
 
         response = http.request(request)

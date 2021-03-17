@@ -53,6 +53,13 @@ p {
 
 .add-btn {
   width: 170px;
+  background-color: #333B3F;
+  opacity: .85;
+  transition: .4s;
+  &:hover {
+    background-color: #333B3F;
+    opacity: .6;
+  }
 }
 .event-form-container {
   width: 50%;
