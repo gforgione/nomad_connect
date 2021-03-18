@@ -1,12 +1,13 @@
 require_relative 'seeds_helper'
+require_relative 'seeds_constants'
 
 class AppSeeds
 
   @@users = []
   @@forum_categories = ["General", "Work", "Adventures"]
-  @@cities = SeedsHelper::CITIES_ARRAY
-  @@calendar_ids = SeedsHelper::CALENDAR_ID
-  @@photo_keys = SeedsHelper::PHOTO_KEYS
+  @@cities = SeedsConstants::CITIES_ARRAY
+  @@calendar_ids = SeedsConstants::CALENDAR_ID
+  @@photo_keys = SeedsConstants::PHOTO_KEYS
   @@city_index = 0
 
   def self.generate_environment
