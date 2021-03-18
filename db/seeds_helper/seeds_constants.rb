@@ -68,4 +68,27 @@ class SeedsConstants
     "yh75jeqs9iacvzq5rmzudp12u03d", # Amsterdam
     "v9hryci4l9nynbpu5yx3xka9m1vi", # Singapore
   ]
+  FORUM_CATEGORIES = [
+    { 
+      name: 'General',
+      post: "The idea is to share your thoutghs about the city!",
+      title: "Tell us your experience in",
+      comment: 'Amazing, the locals are great!',
+      message: 'Hellooooo!'
+    },
+    { 
+      name: 'Work',
+      post: "Looking for a job? Need an employee? Found the right place!;)",
+      title: "Opportunities in",
+      comment: "I'm looking for a job! Experienced Rails Developer!",
+      message: 'Good evening, everyone!'
+    },
+    { 
+      name: 'Adventures',
+      post: 'Looking for someone to go on an adventure?? Let the games begin!',
+      title: "Extreme",
+      comment: 'Who wants to go on a skydiving adventure?',
+      message: "Hi, everyone!"
+    }
+  ]
 end
