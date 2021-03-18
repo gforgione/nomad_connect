@@ -1,13 +1,5 @@
 class SeedsHelper
-
-  def self.gen_city_environment (category, city, user)
-    forum = Forum.create!(name: "#{category[:name]} - #{ city.name }", group: category, city: city)
-    chatroom = Chatroom.create!(name: "#{category[:name]}/#{city.name}", forum: forum )
-    post = Post.create!(user: user, forum: forum, content: category[:post], title: "#{category[:title]} #{city.name}!")
-    Comment.create!(content: category[:comment], user: user, post: post)
-    Message.create!(user: user, content: category[:message], chatroom: chatroom)
-  end
-
+  # User section
   def self.gen_user
     name = Faker::Name.first_name
     last_name = Faker::Name.last_name
@@ -34,6 +26,15 @@ class SeedsHelper
         username: "jerry_the_legend", 
         password: "123456")
     )
+  end
+
+  # City section
+  def self.gen_city_environment (category, city, user)
+    forum = Forum.create!(name: "#{category[:name]} - #{ city.name }", group: category[:name], city: city)
+    chatroom = Chatroom.create!(name: "#{category[:name]}/#{city.name}", forum: forum )
+    post = Post.create!(user: user, forum: forum, content: category[:post], title: "#{category[:title]} #{city.name}!")
+    Comment.create!(content: category[:comment], user: user, post: post)
+    Message.create!(user: user, content: category[:message], chatroom: chatroom)
   end
 
   def self.gen_city(cities, city_index, calendar_id, photo_keys)

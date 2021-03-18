@@ -9,10 +9,9 @@ module EnvironmentHelper
 
   def gen_jerry
     user = SeedsHelper.jerry_user
-
     6.times do
       city = create_city
-      gen_location_city_env(city, user)
+      gen_location_city_content(city, user)
     end
   end
 
@@ -20,10 +19,9 @@ module EnvironmentHelper
     3.times do
       print '###############'
       city = create_city
-
       6.times do
         user = SeedsHelper.gen_user
-        gen_location_city_env(city, user)
+        gen_location_city_content(city, user)
       end
     end
   end
@@ -32,10 +30,9 @@ module EnvironmentHelper
     4.times do
       print '###############'
       user = SeedsHelper.gen_user
-
       3.times do
         city = create_city
-        gen_location_city_env(city, user)
+        gen_location_city_content(city, user)
       end
     end
   end
@@ -48,7 +45,7 @@ module EnvironmentHelper
     city
   end
 
-  def self.gen_location_city_env(city, user)
+  def self.gen_location_city_content(city, user)
     location = Location.create!(user_id: user.id, city_id: city.id)
 
     @@forum_categories.each do |category|

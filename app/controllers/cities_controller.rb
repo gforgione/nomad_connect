@@ -29,24 +29,6 @@ class CitiesController < ApplicationController
     @weather_condition_icon = @weather_results[:condition][:icon][2..-1]
   end
 
-  def new
-    @city = City.new
-  end
-
-  def create
-    @city = City.new(city_params)
-    if @city.save
-      @forum_categories = ["General", "Work", "Adventures"]
-      @forum_categories.each do |category|
-        @forum = Forum.create!(name: "#{category} - #{@city.name}", group: category, city: @city)
-        @chatroom = Chatroom.create!(name: "#{category} - #{@city.name}", forum: @forum)
-      end
-      redirect_to city_path(@city)
-    else
-      render :new
-    end
-  end
-
   def edit
     @city = City.find(params[:id])
   end
