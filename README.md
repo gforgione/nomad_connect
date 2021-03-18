@@ -1,1 +1,4 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# NomadConnect
+---
+- Social Media Web Application helping digital nomads meeting people around the world.
+- Built with: Ruby on Rails, SQL, HTML, CSS, SASS, Bootstrap, JavaScript/ES6.
