@@ -1,4 +1,4 @@
-require_relative 'app_seeds'
+require_relative './seeds_helper/app_seeds'
 
 puts "Cleaning database..."
 
